@@ -175,6 +175,7 @@
   },
   "active": "24b6aa863b2023cf",
   "lastOpenFiles": [
+    "push.bat",
     "KBB-08-Internet-V-AI-Principy.md",
     "KBB-08-Internet-VI-AI-Hrozby a vývoj.md",
     "KBB-50-Legislativa-V-Zákon o KBB.md",
@@ -199,7 +200,6 @@
     "KBB-05-Sociální inženýrství-I-Úvod.md",
     "KBB-05-Sociální inženýrství-Phishing.md",
     "KBB-04-Hacking-III-protokoly.md",
-    "KBB-04-Hacking-II-techniky.md",
-    "KBB-04-Hacking-I-principy.md"
+    "KBB-04-Hacking-II-techniky.md"
   ]
 }

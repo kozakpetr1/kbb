@@ -1,0 +1,2 @@
+# Ignorovat všechny dávkové soubory (.bat)
+*.bat
