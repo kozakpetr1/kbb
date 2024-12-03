@@ -97,16 +97,44 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "KBB-06-Bezpečnost-V-Duševní zdraví.md",
+                "file": "KBB-50-Legislativa-VII-EU organizace.md",
+                "mode": "preview",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "KBB-50-Legislativa-VII-EU organizace"
+            }
+          },
+          {
+            "id": "970d17afd6ed8f02",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "KBB-50-Legislativa-VIII-Občanský zákoník.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "KBB-06-Bezpečnost-V-Duševní zdraví"
+              "title": "KBB-50-Legislativa-VIII-Občanský zákoník"
+            }
+          },
+          {
+            "id": "23f84c5bd7a15f87",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "KBB-50-Legislativa-IX-Trestní zákoník.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "KBB-50-Legislativa-IX-Trestní zákoník"
             }
           }
         ],
-        "currentTab": 6
+        "currentTab": 8
       }
     ],
     "direction": "vertical"
@@ -162,7 +190,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 290.5
   },
   "right": {
     "id": "4e37aeccad17a175",
@@ -243,34 +271,34 @@
       "command-palette:Otevřít paletu příkazů": false
     }
   },
-  "active": "e8ce7d7d283e87f7",
+  "active": "23f84c5bd7a15f87",
   "lastOpenFiles": [
-    "KBB-06-Bezpečnost-IV-2FA.md",
+    "KBB-50-Legislativa-VIII-Občanský zákoník.md",
+    "KBB-50-Legislativa-IX-Trestní zákoník.md",
+    "KBB-50-Legislativa-VII-EU organizace.md",
+    "KBB-08-Internet-II-Blockchain.md",
+    "KBB-08-Internet-I.md",
+    "KBB-08-Internet-IV-IoT-protokoly.md",
+    "KBB-07-Šifrování-III-Kryptoanalýza.md",
+    "KBB-07-Šifrování-II-Hashování.md",
+    "KBB-07-Šifrování-I-Principy.md",
+    "KBB-06-Bezpečnost-I-Techniky.md",
+    "KBB-01-Kyberprostor-I-Základní pojmy.md",
+    "KBB-05-Sociální inženýrství-Phishing.md",
+    "KBB-03-Malware-II-Virus.md",
+    "KBB-03-Malware-I-Úvod.md",
     "KBB-06-Bezpečnost-V-Duševní zdraví.md",
     "KBB-51-Etika-II-Digitální etika.md",
     "KBB-51-Etika-I-Kodexy.md",
-    "KBB-50-Legislativa-VII-EU organizace.md",
+    "KBB-50-Legislativa-I-Úvod.md",
     "KBB-50-Legislativa-VI-NÚKIB a CERT.md",
+    "KBB-06-Bezpečnost-IV-2FA.md",
     "KBB-50-Legislativa-V-Zákon o KBB.md",
     "KBB-50-Legislativa-IV-NIS II.md",
-    "KBB-50-Legislativa-I-Úvod.md",
-    "KBB-08-Internet-IV-IoT-protokoly.md",
-    "KBB-08-Internet-I.md",
     "KBB-08-Internet-VII-AI-Hrozby a vývoj.md",
     "KBB-08-Internet-VI-AI-Principy.md",
     "KBB-08-Internet-V-Darknet.md",
     "KBB-08-Internet-III-IoT.md",
-    "KBB-99-Slovník pojmů.md",
-    "KBB-50-Legislativa-III-GDPR a Cookies.md",
-    "KBB-50-Legislativa-II-GDPR-Úvod.md",
-    "KBB-08-Internet-II-Blockchain.md",
-    "KBB-07-Šifrování-III-Kryptoanalýza.md",
-    "KBB-07-Šifrování-II-Hashování.md",
-    "KBB-07-Šifrování-I-Principy.md",
-    "KBB-06-Bezpečnost-III-Heslo.md",
-    "KBB-06-Bezpečnost-II-Firewall.md",
-    "KBB-06-Bezpečnost-I-Techniky.md",
-    "KBB-05-Sociální inženýrství-Phishing.md",
     "push.bat"
   ]
 }
