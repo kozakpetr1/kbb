@@ -120,10 +120,11 @@ Jednoho dne obdržel pracovník IT oddělení varování o podezřelé aktivitě
     - Jak informovat zákazníky a minimalizovat škody?
     
 3. **Preventivní opatření:**
-    
     - Navrhněte alespoň 5 opatření, která by zabránila podobnému útoku v budoucnu.
     - Zvažte technické, organizační i vzdělávací kroky.
+
 **Formát:** MD
+
 ---
 
 ## **6. Zabezpečení Wi-Fi sítě**
