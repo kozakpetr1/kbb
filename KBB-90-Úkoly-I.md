@@ -1,3 +1,6 @@
+```
+Řešení úloh zpracuj a odevzdej v jednom MD souboru do zadání v Teams.
+```
 ## **1. Analýza phishingového e-mailu**
 
 **Úkol:**  
@@ -7,6 +10,7 @@ Byl vám zaslán e-mail, který může být phishingovým útokem. Vaším úkol
 - Napsat seznam znaků, které vás vedou k podezření, že jde o phishing.
 
 **Výstup:** Stručný seznam podezřelých prvků a doporučení, jak se zachovat při přijetí takového e-mailu.
+**Formát:** MD
 
 ```
 Předmět: Upozornění: Váš účet bude brzy deaktivován!
@@ -42,8 +46,8 @@ Máte za úkol vytvořit pět silných hesel, která splňují následující kr
 - Použití velkých i malých písmen, čísel a speciálních znaků.
 - Nepoužívejte osobní údaje (např. jméno, datum narození).
 
-Jaký jste použili postup pro vytvoření hesel?
-**Výstup:** Seznam pěti silných hesel a vysvětlení, proč jsou bezpečná.
+**Výstup:** Seznam pěti silných hesel, vysvětlení, proč jsou bezpečná a postup vytvoření hesel.
+**Formát:** MD
 
 ---
 
@@ -56,6 +60,7 @@ Zpráva byla zašifrována jednoduchou Caesarovou šifrou s posunem o 4 znaky (Z
 2. Vysvětlit postup, jak jste šifru rozluštili.
 
 **Výstup:** Rozluštěná zpráva a popis dešifrovacího postupu.
+**Formát:** MD
 
 ---
 
@@ -69,6 +74,7 @@ Vyhledejte své jméno na internetu a zjistěte, jaké informace o vás lze dohl
 - Jaké kroky byste mohli podniknout k ochraně svého soukromí?
 
 **Výstup:** Stručná analýza vaší digitální stopy a doporučení, jak ji minimalizovat.
+**Formát:** MD
 
 ---
 
@@ -117,7 +123,7 @@ Jednoho dne obdržel pracovník IT oddělení varování o podezřelé aktivitě
     
     - Navrhněte alespoň 5 opatření, která by zabránila podobnému útoku v budoucnu.
     - Zvažte technické, organizační i vzdělávací kroky.
-    
+**Formát:** MD
 ---
 
 ## **6. Zabezpečení Wi-Fi sítě**
@@ -125,7 +131,8 @@ Jednoho dne obdržel pracovník IT oddělení varování o podezřelé aktivitě
 **Úkol:**  
 Vytvořte návod na zabezpečení domácí Wi-Fi sítě. 
 
-**Výstup:** Strukturovaný návod v MD, který mohou použít ostatní.
+**Výstup:** Strukturovaný návod, který mohou použít ostatní.
+**Formát:** MD
 
 ---
 
@@ -166,6 +173,7 @@ Analyzujte zadané zprávy nebo články a určete, zda jsou pravdivé, nebo fal
 - Účel článku. 
 
 **Výstup:** Seznam zjištění u každé zprávy a návrhy, jak ověřovat informace.
+**Formát:** MD
 
 ---
 
