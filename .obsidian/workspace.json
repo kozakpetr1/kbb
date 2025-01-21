@@ -4,109 +4,20 @@
     "type": "split",
     "children": [
       {
-        "id": "f5ccfbbc0db0e0b9",
+        "id": "4c8c4d26a9d4a847",
         "type": "tabs",
         "children": [
           {
-            "id": "71f0af738da65a4b",
+            "id": "4facf1ef8f2e0543",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "KBB-06-Bezpečnost-1-Techniky.md",
-                "mode": "preview",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "KBB-06-Bezpečnost-1-Techniky"
-            }
-          },
-          {
-            "id": "a96fe68705ccb59b",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "KBB-06-Bezpečnost-1.3-2FA.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "KBB-06-Bezpečnost-1.3-2FA"
-            }
-          },
-          {
-            "id": "fb027d184764faba",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "KBB-06-Bezpečnost-1.5-TOR.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "KBB-06-Bezpečnost-1.5-TOR"
-            }
-          },
-          {
-            "id": "def62f7bcd7ce4d9",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "KBB-08-Internet-5.1-AI-Principy.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "KBB-08-Internet-5.1-AI-Principy"
-            }
-          },
-          {
-            "id": "1ea842ad2d30d0c9",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "KBB-04-Hacking-3-protokoly.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "KBB-04-Hacking-3-protokoly"
-            }
-          },
-          {
-            "id": "7270b837d153f1d8",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "KBB-04-Hacking-4-distro pro hacking.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "KBB-04-Hacking-4-distro pro hacking"
-            }
-          },
-          {
-            "id": "cf6bc96b0a2f9e53",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "KBB-04-Hacking-5-penetrační testování.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "KBB-04-Hacking-5-penetrační testování"
+              "title": "New tab"
             }
           }
-        ],
-        "currentTab": 6
+        ]
       }
     ],
     "direction": "vertical"
@@ -243,12 +154,20 @@
       "command-palette:Otevřít paletu příkazů": false
     }
   },
-  "active": "cf6bc96b0a2f9e53",
+  "active": "4facf1ef8f2e0543",
   "lastOpenFiles": [
-    "KBB-04-Hacking-4-distro pro hacking.md",
-    "KBB-04-Hacking-5-penetrační testování.md",
+    "KBB-06-Bezpečnost-1-Techniky.md",
+    "KBB-06-Bezpečnost-1.3-2FA.md",
+    "KBB-06-Bezpečnost-1.5-TOR.md",
+    "KBB-08-Internet-5.1-AI-Principy.md",
     "KBB-04-Hacking-3-protokoly.md",
+    "KBB-04-Hacking-4-distro pro hacking.md",
+    "KBB-08-Internet-5.3-AI-Hrozby a vývoj.md",
     "KBB-08-Internet-5.2-typy AI.md",
+    "KBB-06-Bezpečnost-1.6-VPN vs. TOR.md",
+    "KBB-04-Hacking-5-penetrační testování.md",
+    "KBB-06-Bezpečnost-1.7-Duševní zdraví.md",
+    "KBB-06-Bezpečnost-1.4-VPN.md",
     "KBB-50-Legislativa-1-Úvod.md",
     "KBB-99-Slovník pojmů.md",
     "KBB-90-Úkoly-2.md",
@@ -263,14 +182,6 @@
     "KBB-04-Hacking-2-techniky.md",
     "KBB-04-Hacking-1-principy.md",
     "KBB-03-Malware-6-Antivir a antispam.md",
-    "KBB-03-Malware-5-Spyware.md",
-    "KBB-03-Malware-4-Ransomware.md",
-    "KBB-03-Malware-3-Trojské koně.md",
-    "KBB-03-Malware-2-Virus.md",
-    "KBB-03-Malware-1-Úvod.md",
-    "KBB-07-Šifrování-3-Kryptoanalýza.md",
-    "KBB-07-Šifrování-2-Hashování.md",
-    "KBB-07-Šifrování-1-Principy.md",
     "KBB-08-Internet-5.2-typy AI",
     "push.bat"
   ]
