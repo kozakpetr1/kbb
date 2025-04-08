@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "KBB-04-Hacking-5-penetrační testování.md",
-                "mode": "source",
+                "file": "KBB-90-Úkoly-Kvantové počítače.md",
+                "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "KBB-04-Hacking-5-penetrační testování"
+              "title": "KBB-90-Úkoly-Kvantové počítače"
             }
           }
         ],
@@ -55,7 +55,8 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "alphabetical"
+                "sortOrder": "alphabetical",
+                "autoReveal": false
               },
               "icon": "lucide-folder-closed",
               "title": "Průzkumník souborů"
@@ -165,9 +166,9 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "canvas:Vytvořit nový canvas": false,
       "switcher:Otevřít rychlé přepínání": false,
       "graph:Otevřít graf": false,
-      "canvas:Create new canvas": false,
       "daily-notes:Otevřít dnešní poznámku": false,
       "templates:Vložit šablonu": false,
       "command-palette:Otevřít paletu příkazů": false
@@ -175,15 +176,16 @@
   },
   "active": "179b56496f1713ab",
   "lastOpenFiles": [
+    "KBB-90-Úkoly-1.md",
+    "KBB-90-Úkoly-Kvantové počítače.md",
+    "KBB-08-Internet-5.2-typy AI.md",
+    "KBB-04-Hacking-5-penetrační testování.md",
     "KBB-02-Zranitelnost-1-Info.md",
     "KBB-02-Riziko, zranitelnost, hrozba.md",
-    "KBB-08-Internet-5.2-typy AI.md",
     "KBB-08-Internet-5.3-AI-Hrozby a vývoj.md",
-    "KBB-04-Hacking-5-penetrační testování.md",
     "KBB-04-Hacking-4-distro pro hacking.md",
     "KBB-06-Bezpečnost-1.6-VPN vs. TOR.md",
     "KBB-06-Bezpečnost-1.5-TOR.md",
-    "KBB-90-Úkoly-1.md",
     "KBB-08-Internet-4-Darknet.md",
     "KBB-06-Bezpečnost-1-Techniky.md",
     "KBB-06-Bezpečnost-1.3-2FA.md",
@@ -193,7 +195,6 @@
     "KBB-06-Bezpečnost-1.4-VPN.md",
     "KBB-50-Legislativa-1-Úvod.md",
     "KBB-99-Slovník pojmů.md",
-    "KBB-90-Úkoly-2.md",
     "KBB-51-Etika-2-Digitální etika.md",
     "KBB-51-Etika-1-Kodexy.md",
     "KBB-01-Kyberprostor-2-Kriminalita.md",
