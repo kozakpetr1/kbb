@@ -55,16 +55,30 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "KBB-90-Kyberprosto a fyzické útoky.md",
+                "file": "KBB-05-Sociální inženýrství-2-Phishing.md",
+                "mode": "preview",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "KBB-05-Sociální inženýrství-2-Phishing"
+            }
+          },
+          {
+            "id": "eeb70534cbad58e8",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "KBB-90-Úkoly-témata 2025.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "KBB-90-Kyberprosto a fyzické útoky"
+              "title": "KBB-90-Úkoly-témata 2025"
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -202,18 +216,22 @@
       "command-palette:Otevřít paletu příkazů": false
     }
   },
-  "active": "b72448f2eb3145f6",
+  "active": "eeb70534cbad58e8",
   "lastOpenFiles": [
-    "KBB-90-Úkoly-Robotika a AI-Vývoj humanoidních robotů.md",
-    "KBB-90-Kyberprosto a fyzické útoky.md",
-    "KBB-90-Úkoly-Kvantové počítače.md",
+    "KBB-05-Sociální inženýrství-2-Phishing.md",
+    "KBB-90-Úkoly-témata 2025.md",
+    "KBB-04-Hacking-4-distro pro hacking.md",
     "KBB-90-Úkoly-1.md",
-    "KBB-08-Internet-5.2-typy AI.md",
-    "KBB-04-Hacking-5-penetrační testování.md",
+    "KBB-90-Úkoly-Kvantové počítače.md",
+    "KBB-90-Úkoly-Robotika a AI-Vývoj humanoidních robotů.md",
     "KBB-02-Zranitelnost-1-Info.md",
     "KBB-02-Riziko, zranitelnost, hrozba.md",
+    "KBB-01-Kyberprostor-2-Kriminalita.md",
+    "KBB-01-Kyberprostor-1-Základní pojmy.md",
+    "KBB-90-Kyberprosto a fyzické útoky.md",
+    "KBB-08-Internet-5.2-typy AI.md",
+    "KBB-04-Hacking-5-penetrační testování.md",
     "KBB-08-Internet-5.3-AI-Hrozby a vývoj.md",
-    "KBB-04-Hacking-4-distro pro hacking.md",
     "KBB-06-Bezpečnost-1.6-VPN vs. TOR.md",
     "KBB-06-Bezpečnost-1.5-TOR.md",
     "KBB-08-Internet-4-Darknet.md",
@@ -226,10 +244,6 @@
     "KBB-50-Legislativa-1-Úvod.md",
     "KBB-99-Slovník pojmů.md",
     "KBB-51-Etika-2-Digitální etika.md",
-    "KBB-51-Etika-1-Kodexy.md",
-    "KBB-01-Kyberprostor-2-Kriminalita.md",
-    "KBB-01-Kyberprostor-1-Základní pojmy.md",
-    "KBB-05-Sociální inženýrství-2-Phishing.md",
     "KBB-08-Internet-5.2-typy AI",
     "push.bat"
   ]
