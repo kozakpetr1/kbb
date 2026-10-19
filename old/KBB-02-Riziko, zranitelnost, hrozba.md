@@ -44,7 +44,7 @@ Zdroj: [aptien.com](https://aptien.com/cs/kb/articles/what-is-vulnerability)
 Někdy lze hrozby a nebezpečí používat stejně, profesionálové v oblasti rizik používají přesné rozlišení hrozeb a nebezpečí následujícím způsobem: 
 ### Hrozba
 O **hrozbě** mluvíme při reálném vzniku události nebo jevu, tedy při vzniku konkrétní, reálné události.
-Hrozba je je tedy například konkrétní útok (například útok DDoS) , který cílí na nějakou zranitelnost procesu nebo aktiva
+Hrozba je tedy například konkrétní útok (například útok DDoS) , který cílí na nějakou zranitelnost procesu nebo aktiva
 ### Nebezpečí
 **Nebezpečí** má nějaký trvalejší charakter a znamená spíše určité podmínky pro vznik hrozby nebo rizika (například nebezpečí zranění u nějakého stroje). 
 ## Rizika

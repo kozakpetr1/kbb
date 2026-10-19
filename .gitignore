@@ -1,5 +1,8 @@
-# Ignorovat tyto soubory
-*.bat
-*.exe
+# Ignorovat vše…
+/*
 
-
+# …kromě těchto:
+!/.gitignore
+!/index.html
+!/assets/
+!/old/

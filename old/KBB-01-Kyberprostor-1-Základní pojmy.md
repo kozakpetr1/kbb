@@ -11,13 +11,13 @@ Níže je uvedeno 10 základních pojmů, které jsou klíčové pro pochopení 
 ---
 
 ## 2. **Kybernetický prostor**
-- **Definice**: Virtuální prostředí vytvořené propojením počítačových sítí a digitálních technologií. Zahrnuje internet, intranety, databáze, cloudové služby a další digitální infrastruktury.  
+- **Definice**: Virtuální prostředí vytvořené propojením počítačových sítí a digitálních technologií. Zahrnuje internet, intranety, databáze, cloudové služby a další digitální infrastruktury a také uživatele a jejich účty. Jde o socio-technické prostředí.
 - **Příklad**: Sociální sítě, e-mailové komunikace nebo internetové aplikace.
 
 ---
 
 ## 3. **Kybernetická bezpečnost**
-- **Definice**: Soubor metod, technologií a postupů určených k ochraně digitálních dat, systémů a sítí před neoprávněným přístupem, zneužitím nebo narušením.  
+- **Definice**: Soubor zákonů, nařízení, vyhlášek, metod, technologií a postupů určených k ochraně digitálních dat, systémů a sítí před neoprávněným přístupem, zneužitím nebo narušením.  
 - **Cíl**: Prevence kybernetických útoků a ochrana citlivých informací.
 
 ---

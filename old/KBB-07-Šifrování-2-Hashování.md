@@ -5,7 +5,7 @@ Hashování je proces, při kterém se vstupní data (např. text nebo soubor) p
 - **Deterministické**: Pro stejný vstup bude hash vždy stejný.
 - **Rychlost**: Hashování by mělo být rychlé, aby umožnilo rychlé zpracování i velkých objemů dat.
 - **Jednosměrné**: Hashovací funkce je navržena tak, že je obtížné (prakticky nemožné) získat původní data z hashového výstupu.
-- **Kollizní rezistence**: Je velmi nepravděpodobné, že dvě různá vstupní data povedou k identickému hashovému výstupu (tzv. "kolize").
+- **Kolizní rezistence**: Je velmi nepravděpodobné, že dvě různá vstupní data povedou k identickému hashovému výstupu (tzv. "kolize").
 - **Fixní délka**: Bez ohledu na délku vstupních dat má výstup vždy pevnou délku.
 
 ---

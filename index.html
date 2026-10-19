@@ -1,0 +1,1499 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Kybernetická bezpečnost KBB</title>
+<meta name="description" content="Interaktivní webová prezentace předmětu Kybernetická bezpečnost – VOŠ, SPŠ a SOŠ Varnsdorf">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;400;600;700&display=swap">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+<div class="mobile-header">
+  <a class="brand" href="#uvod" aria-label="Úvod">
+    <svg viewBox="0 0 565 489.01" aria-hidden="true"><polygon points="0 0 186 108 233 191 140.91 244.5 0 0" fill="#ffdf6a"/><polygon points="0 0 282.5 0 282.5 108.17 186 108 0 0" fill="#ffd503"/><polygon points="331 191 424 244 565 0 379.15 108.17" fill="#16c1f3"/><polygon points="282 0 565 0 380 108 282 108 282 0" fill="#70d0f6"/><path d="m283,276l48-85,93,53s-141,246.41-141,245v-213Z" fill="#a6ce39"/><polygon points="283 489 141 244 233 191 283 276 283 489" fill="#c0db75"/></svg>
+    <span class="brand-text">Kybernetická<span>bezpečnost</span></span>
+  </a>
+  <button class="menu-btn" id="menuBtn" aria-label="Otevřít menu" aria-expanded="false"><svg viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg></button>
+</div>
+<div class="scrim" id="scrim"></div>
+<aside class="sidebar" id="sidebar" aria-label="Obsah prezentace">
+  <a class="brand" href="#uvod">
+    <svg viewBox="0 0 565 489.01" aria-hidden="true"><polygon points="0 0 186 108 233 191 140.91 244.5 0 0" fill="#ffdf6a"/><polygon points="0 0 282.5 0 282.5 108.17 186 108 0 0" fill="#ffd503"/><polygon points="331 191 424 244 565 0 379.15 108.17" fill="#16c1f3"/><polygon points="282 0 565 0 380 108 282 108 282 0" fill="#70d0f6"/><path d="m283,276l48-85,93,53s-141,246.41-141,245v-213Z" fill="#a6ce39"/><polygon points="283 489 141 244 233 191 283 276 283 489" fill="#c0db75"/></svg>
+    <span class="brand-text">VOŠ, SPŠ a SOŠ Varnsdorf<span>Kybernetická bezpečnost</span></span>
+  </a>
+  <p class="nav-title">Kapitoly</p>
+  <ul class="nav" id="nav"></ul>
+  <div class="side-foot">
+    <div class="legend"><i></i> téma obsahuje simulaci</div>
+    Listování: <kbd>←</kbd> <kbd>→</kbd><br>
+    Simulace běží jen ve vašem prohlížeči a nikam nic neodesílají.
+  </div>
+</aside>
+<main id="main">
+  <div class="topbar">
+    <div class="crumb" id="crumb"></div>
+    <div class="progress"><span id="progTxt"></span><div class="progress-bar"><span id="progBar"></span></div></div>
+  </div>
+
+<!-- ================= ÚVOD ================= -->
+<section class="topic" id="uvod" data-ch="00" data-title="Úvod">
+  <div class="hero">
+    <div>
+      <p class="eyebrow">Předmět KBB · interaktivní prezentace</p>
+      <h1>Kybernetická bezpečnost</h1>
+      <p class="lead">Od základních pojmů přes malware, hacking a sociální inženýrství až po šifrování, legislativu a etiku. U většiny témat si útok nebo obranu vyzkoušíte v bezpečné simulaci přímo v prohlížeči.</p>
+      <div class="btns" style="margin-top:1.5rem"><a class="btn" href="#k-pojmy">Začít první kapitolou</a><a class="btn acc" href="#u-kviz">Závěrečný test</a></div>
+    </div>
+    <svg class="hero-mark" viewBox="0 0 565 489.01" aria-hidden="true"><polygon points="0 0 186 108 233 191 140.91 244.5 0 0" fill="#ffdf6a"/><polygon points="0 0 282.5 0 282.5 108.17 186 108 0 0" fill="#ffd503"/><polygon points="331 191 424 244 565 0 379.15 108.17" fill="#16c1f3"/><polygon points="282 0 565 0 380 108 282 108 282 0" fill="#70d0f6"/><path d="m283,276l48-85,93,53s-141,246.41-141,245v-213Z" fill="#a6ce39"/><polygon points="283 489 141 244 233 191 283 276 283 489" fill="#c0db75"/></svg>
+  </div>
+  <div class="dash-stats" id="dashStats"></div>
+  <h2>Kapitoly</h2>
+  <div class="ch-grid" id="chTiles"></div>
+  <div class="callout" style="margin-top:2rem"><span class="ct">Jak s prezentací pracovat</span>
+    <p>Témata procházejte postranním menu, tlačítky dole nebo šipkami <kbd>←</kbd> <kbd>→</kbd>. Témata se zeleným bodem v menu obsahují simulaci. Všechny ukázky útoků jsou zjednodušené modely, běží jen v tomto okně a nikam nic neodesílají. Firmy, banky a e-mailové adresy v ukázkách jsou smyšlené.</p>
+  </div>
+  <div class="callout warn"><span class="ct">Pravidlo číslo jedna</span>
+    <p>Techniky z této prezentace zkoušejte jen na vlastních systémech nebo s písemným souhlasem vlastníka. Neoprávněný přístup k počítačovému systému je trestný čin (§ 230 trestního zákoníku).</p>
+  </div>
+</section>
+
+<!-- ================= 01 KYBERPROSTOR ================= -->
+<section class="topic" id="k-pojmy" data-ch="01" data-title="Základní pojmy">
+  <div class="topic-head">
+    <h1>Základní pojmy kybernetického prostoru</h1>
+    <p class="lead">Deset pojmů, bez kterých se v kybernetické bezpečnosti neobejdete. Kybernetický prostor netvoří jen technika, ale i lidé, jejich účty a data.</p>
+  </div>
+
+  <div class="grid two">
+    <div class="card"><span class="tag">Obor</span><h3>Kybernetika</h3><p>Vědní obor o řízení a přenosu informací v systémech technických, biologických i společenských. Zkoumá zpětnou vazbu, řízení a komunikaci. Za zakladatele je považován <b>Norbert Wiener</b> (kniha <i>Cybernetics</i>, 1948).</p></div>
+    <div class="card"><span class="tag">Prostředí</span><h3>Kybernetický prostor</h3><p>Digitální prostředí vzniklé propojením sítí, systémů a služeb: internet, intranety, databáze, cloud, ale také uživatelé a jejich účty. Jde o <b>socio-technické</b> prostředí, kde se technika a lidské chování nedají oddělit.</p></div>
+    <div class="card"><span class="tag">Cíl</span><h3>Kybernetická bezpečnost</h3><p>Souhrn technických, organizačních a právních opatření, která chrání systémy, sítě a data před neoprávněným přístupem, zneužitím a narušením. Chrání tři vlastnosti informací: <b>důvěrnost, integritu a dostupnost</b>.</p></div>
+    <div class="card"><span class="tag">Aktér</span><h3>Hacker</h3><p>Člověk, který do hloubky zkoumá a upravuje systémy. Podle úmyslu rozlišujeme <b>white hat</b> (etický, s povolením), <b>black hat</b> (škodí) a <b>grey hat</b> (jedná bez povolení, ale obvykle bez zlého úmyslu).</p></div>
+  </div>
+
+  <div class="callout ok"><span class="ct">Triáda CIA – co vlastně chráníme</span>
+    <p><b>Confidentiality (důvěrnost)</b> – data vidí jen oprávnění. <b>Integrity (integrita)</b> – data nikdo nepozorovaně nezměnil. <b>Availability (dostupnost)</b> – systém funguje, když ho potřebujeme. Každý útok v této prezentaci míří aspoň na jednu z nich: spyware na důvěrnost, podvržení dat na integritu, DDoS na dostupnost.</p>
+  </div>
+
+  <div class="sim" data-sim="flip" id="sim-pojmy">
+    <div class="sim-head"><span class="badge b">Procvičení</span><h3>Pojmové kartičky</h3></div>
+    <div class="sim-body"><p class="muted">Zkuste si definici nejdřív říct nahlas, pak kartičku otočte.</p></div>
+    <script type="application/json">[
+      {"t":"Malware","d":"Škodlivý software, který má poškodit systém, ukrást data nebo získat neoprávněný přístup. Patří sem viry, červi, trojské koně, ransomware, spyware…"},
+      {"t":"Phishing","d":"Podvod, při kterém se útočník vydává za důvěryhodnou instituci, aby z oběti vylákal hesla, platební nebo osobní údaje. Typicky falešný e-mail „od banky“."},
+      {"t":"Firewall","d":"Software nebo zařízení, které filtruje příchozí a odchozí síťový provoz podle předem daných pravidel a brání neoprávněnému přístupu."},
+      {"t":"Šifrování","d":"Převod čitelných dat na nečitelnou podobu, kterou umí vrátit jen držitel správného klíče. Příklad: end-to-end šifrování v aplikaci Signal."},
+      {"t":"DDoS","d":"Distributed Denial of Service – zahlcení serveru nebo sítě požadavky z mnoha zařízení najednou (často z botnetu), takže služba přestane být dostupná."},
+      {"t":"IoT","d":"Internet of Things – fyzická zařízení připojená k internetu: chytré hodinky, termostaty, kamery, hlasoví asistenti. Často mají slabé zabezpečení."},
+      {"t":"Botnet","d":"Síť napadených zařízení (botů, „zombie“), která útočník ovládá na dálku, např. k DDoS útokům nebo rozesílání spamu."},
+      {"t":"Zero-day","d":"Zranitelnost, o které výrobce zatím neví nebo pro ni ještě nevydal opravu. Obránci měli „nula dní“ na přípravu."},
+      {"t":"APT","d":"Advanced Persistent Threat – dlouhodobý, cílený a dobře financovaný útok, často státem podporovaných skupin. Cílem bývá špionáž."},
+      {"t":"SIEM","d":"Security Information and Event Management – systém, který sbírá a vyhodnocuje bezpečnostní záznamy (logy) z celé organizace a upozorňuje na podezřelé události."}
+    ]</script>
+  </div>
+
+  <h2>Další pojmy, které v kurzu potkáte</h2>
+  <p>Adversariální útok · APT · blockchain · botnet · CAPTCHA · dark web · únik dat (data breach) · digitální identita · end-to-end šifrování · exploit · hashování · keylogger · kybernetická kriminalita · kybernetická válka · penetrační testování · SIEM · sociální inženýrství · spyware · dvoufázové ověření (2FA) · zero-day. Všechny najdete ve <a href="#g-slovnik">slovníku pojmů</a>.</p>
+</section>
+
+<section class="topic" id="k-kriminalita" data-ch="01" data-title="Kybernetická kriminalita">
+  <div class="topic-head">
+    <h1>Kybernetická kriminalita</h1>
+    <p class="lead">Kriminalisté rozlišují dvě skupiny. Některé činy bez počítačů a sítí vůbec nevzniknou. Jiné jsou staré jako lidstvo, jen jim internet dal nové nástroje.</p>
+  </div>
+  <div class="grid two">
+    <div class="card"><span class="tag">Cyber-dependent</span><h3>Závislé na kyberprostoru</h3>
+      <ul class="list blue">
+        <li><b>Hacking</b> – neoprávněné pronikání do systémů.</li>
+        <li><b>Šíření malwaru</b> – virů, červů, trojských koní.</li>
+        <li><b>Ransomware</b> – zašifrování dat a vydírání.</li>
+        <li><b>DDoS útok</b> – vyřazení služby zahlcením.</li>
+        <li><b>SQL injection</b> – vložení kódu do databázového dotazu.</li>
+        <li><b>Provoz botnetu</b> – síť ovládaných zařízení.</li>
+        <li><b>Keylogging</b> – zaznamenávání stisků kláves.</li>
+      </ul></div>
+    <div class="card"><span class="tag">Cyber-enabled</span><h3>Existují i mimo kyberprostor</h3>
+      <ul class="list">
+        <li><b>Podvod</b> – falešné e-shopy, investiční podvody, phishing.</li>
+        <li><b>Krádež identity</b> – zneužití cizích údajů k půjčce či účtům.</li>
+        <li><b>Vydírání</b>, včetně <b>sextortion</b> (vydírání intimními materiály).</li>
+        <li><b>Nebezpečné pronásledování</b> (stalking) a <b>kyberšikana</b>.</li>
+        <li><b>Zneužívání dětí</b> a navazování nedovolených kontaktů s dítětem (kybergrooming).</li>
+        <li><b>Praní peněz</b>, obchod s drogami, terorismus, korupce.</li>
+      </ul></div>
+  </div>
+  <div class="callout fix"><span class="ct">Upřesnění</span>
+    <p>Spoofing (podvržení identity) a phishing jsou spíš <b>techniky</b> než samostatné trestné činy. Trestným činem je teprve to, čeho jimi pachatel dosáhne: podvod, neoprávněný přístup apod. Kyberšikana je v praxi postihována jako nebezpečné pronásledování, vydírání nebo pomluva.</p>
+  </div>
+  <div class="sim" data-sim="classify" id="sim-krim">
+    <div class="sim-head"><span class="badge b">Procvičení</span><h3>Zařaďte případ</h3></div>
+    <div class="sim-body"><p class="muted">Rozhodněte, zda by čin mohl existovat i bez počítačů.</p></div>
+    <script type="application/json">{"cats":["Závislý na kyberprostoru","Existuje i mimo něj"],"items":[
+      {"t":"Útočník zahltí e-shop miliony požadavků z botnetu.","c":0,"e":"DDoS bez sítě neexistuje."},
+      {"t":"Podvodník prodává přes inzerát neexistující mobil a nechá si poslat zálohu.","c":1,"e":"Podvod je starý jako obchod, internet jen usnadnil dosah."},
+      {"t":"Někdo opakovaně píše oběti výhružné zprávy a sleduje její polohu.","c":1,"e":"Nebezpečné pronásledování (stalking) existuje i offline."},
+      {"t":"Ransomware zašifruje servery nemocnice.","c":0,"e":"Bez počítačů a šifrování dat by tento čin nevznikl."},
+      {"t":"Pachatel si s ukradenými osobními údaji sjedná půjčku.","c":1,"e":"Krádež identity šla i s papírovými doklady."},
+      {"t":"Útočník vloží do přihlašovacího formuláře kód, který změní SQL dotaz.","c":0,"e":"SQL injection je čistě technický útok."}
+    ]}</script>
+  </div>
+</section>
+
+<!-- ================= 02 RIZIKO ================= -->
+<section class="topic" id="r-pojmy" data-ch="02" data-title="Aktivum, hrozba, zranitelnost, riziko">
+  <div class="topic-head">
+    <h1>Aktivum, hrozba, zranitelnost, riziko</h1>
+    <p class="lead">Riziko vzniká tam, kde se setká hrozba se zranitelností chráněného aktiva. Kdo umí tyto čtyři pojmy rozlišit, zvládne základ analýzy rizik.</p>
+  </div>
+
+  <div class="grid">
+    <div class="card"><span class="tag">Co chráníme</span><h3>Aktivum</h3><p>Vše, co má pro organizaci hodnotu. <b>Primární aktivum</b> je informace nebo služba (např. evidence pacientů). <b>Podpůrné aktivum</b> je technika, programy, budovy, zaměstnanci a dodavatelé, na kterých primární aktivum stojí.</p></div>
+    <div class="card"><span class="tag">Slabé místo</span><h3>Zranitelnost</h3><p>Slabina aktiva, procesu nebo chování lidí, kterou může hrozba využít. Pojmenovává se slovy <i>chybějící, nedostatečný, špatně nastavený, chyba v…</i></p></div>
+    <div class="card"><span class="tag">Co může nastat</span><h3>Hrozba</h3><p>Událost nebo jednání, které může aktivum poškodit: útok, krádež, sabotáž, požár, povodeň, ale i chyba zaměstnance. Hrozby jsou <b>vnější i vnitřní</b>, úmyslné i neúmyslné.</p></div>
+    <div class="card"><span class="tag">Výsledek</span><h3>Riziko</h3><p>Možnost, že hrozba využije zranitelnost a způsobí škodu. Obvykle se hodnotí jako <b>pravděpodobnost × dopad</b>.</p></div>
+  </div>
+
+  <h2>Příklady zranitelností</h2>
+  <div class="tbl"><table>
+    <thead><tr><th>Oblast</th><th>Zranitelnost</th><th>Hrozba, která ji využije</th></tr></thead>
+    <tbody>
+      <tr><td>Proces</td><td>Neodebraná oprávnění odcházejícího zaměstnance</td><td>Zneužití přístupu bývalým zaměstnancem</td></tr>
+      <tr><td>IT</td><td>Chybějící šifrování dat, chybějící HTTPS na webu</td><td>Odposlech komunikace</td></tr>
+      <tr><td>IT</td><td>Neaktualizovaný software se známou chybou</td><td>Útok exploitem, ransomware</td></tr>
+      <tr><td>Lidé</td><td>Nedostatečně proškolený pracovník</td><td>Phishing, sociální inženýrství</td></tr>
+      <tr><td>Fyzická bezpečnost</td><td>Nezamykatelné dveře do serverovny, chybějící kamery</td><td>Krádež nebo poškození serveru</td></tr>
+      <tr><td>BOZP</td><td>Nedostatečná ochrana hlavy a rukou u stroje</td><td>Pracovní úraz</td></tr>
+    </tbody></table></div>
+
+  <div class="callout"><span class="ct">Hrozba vs. nebezpečí</span><p><b>Nebezpečí</b> je trvalejší stav, který vytváří podmínky pro škodu (např. nebezpečí zranění u lisu). <b>Hrozba</b> je konkrétní událost nebo jednání, které na zranitelnost míří (např. probíhající DDoS útok).</p></div>
+  <div class="callout fix"><span class="ct">Upřesnění</span><p>V původních podkladech stálo, že hrozby jsou jen vnější faktory. Ve skutečnosti významnou část incidentů způsobí lidé uvnitř organizace: chybou, neznalostí nebo záměrně (insider). Postup analýzy rizik: 1. aktiva → 2. hrozby → 3. zranitelnosti → 4. ohodnocení rizika → 5. opatření.</p></div>
+
+  <div class="sim" data-sim="risk" id="sim-risk">
+    <div class="sim-head"><span class="badge g">Simulace</span><h3>Matice rizik</h3></div>
+    <div class="sim-body">
+      <p class="muted">Vyberte scénář a odhadněte pravděpodobnost a dopad. Matice ukáže úroveň rizika a doporučí, jak s ním naložit.</p>
+      <div class="row">
+        <div class="field" style="flex-basis:100%"><label class="lbl" for="risk-sc">Scénář</label><select class="inp" id="risk-sc"></select></div>
+      </div>
+      <div class="split" style="margin-top:1rem">
+        <div>
+          <div class="kv" id="risk-kv" style="margin-bottom:1rem"></div>
+          <label class="lbl" for="risk-p">Pravděpodobnost: <span id="risk-pv"></span></label><input type="range" id="risk-p" min="1" max="5" step="1">
+          <label class="lbl" for="risk-d" style="margin-top:.8rem">Dopad: <span id="risk-dv"></span></label><input type="range" id="risk-d" min="1" max="5" step="1">
+          <div class="result" id="risk-out"></div>
+        </div>
+        <div><div class="matrix" id="risk-m"></div><p class="small muted" style="margin-top:.5rem">Svisle dopad, vodorovně pravděpodobnost. Klikněte na políčko.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="topic" id="r-zdroje" data-ch="02" data-title="Zdroje informací o zranitelnostech">
+  <div class="topic-head">
+    <h1>Kde hledat informace o zranitelnostech</h1>
+    <p class="lead">Známé zranitelnosti se evidují ve veřejných databázích. Každá dostane jednoznačný identifikátor a hodnocení závažnosti, takže se o ní dá mluvit po celém světě stejně.</p>
+  </div>
+  <div class="grid">
+    <div class="card"><span class="tag">Identifikátory</span><h3>CVE</h3><p>Common Vulnerabilities and Exposures – celosvětový seznam známých zranitelností. Formát <code>CVE-rok-číslo</code>, např. <code>CVE-2021-44228</code>. <a href="https://www.cve.org/" target="_blank" rel="noopener">cve.org</a></p></div>
+    <div class="card"><span class="tag">Databáze</span><h3>NVD</h3><p>National Vulnerability Database (NIST, USA). K záznamům CVE doplňuje hodnocení <b>CVSS</b>, dotčené produkty a odkazy na opravy. <a href="https://nvd.nist.gov/" target="_blank" rel="noopener">nvd.nist.gov</a></p></div>
+    <div class="card"><span class="tag">Techniky útočníků</span><h3>MITRE ATT&amp;CK</h3><p>Znalostní báze taktik a technik, které útočníci skutečně používají – od průzkumu po únik dat. <a href="https://attack.mitre.org/" target="_blank" rel="noopener">attack.mitre.org</a></p></div>
+    <div class="card"><span class="tag">Webové aplikace</span><h3>OWASP</h3><p>Komunita zaměřená na bezpečnost webu. Známý je žebříček <b>OWASP Top 10</b> nejčastějších rizik webových aplikací. <a href="https://owasp.org/" target="_blank" rel="noopener">owasp.org</a></p></div>
+    <div class="card"><span class="tag">Exploity</span><h3>Exploit Database</h3><p>Archiv veřejně publikovaných exploitů a jejich popisů, určený pro penetrační testery. <a href="https://www.exploit-db.com/" target="_blank" rel="noopener">exploit-db.com</a></p></div>
+    <div class="card"><span class="tag">Česko</span><h3>NÚKIB a CSIRT.CZ</h3><p>Národní úřad vydává varování a upozornění na kritické zranitelnosti, národní tým CSIRT.CZ (provozuje CZ.NIC) informuje o incidentech. <a href="https://nukib.gov.cz/" target="_blank" rel="noopener">nukib.gov.cz</a></p></div>
+  </div>
+  <p class="small muted">Dále: Bugcrowd Vulnerability Rating Taxonomy (hodnocení v bug bounty programech) a nástroje jako Snyk, které hlídají zranitelnosti v knihovnách, na kterých stojí váš kód.</p>
+
+  <div class="sim" data-sim="cvss" id="sim-cvss">
+    <div class="sim-head"><span class="badge g">Simulace</span><h3>Jak číst skóre CVSS</h3></div>
+    <div class="sim-body">
+      <p class="muted">CVSS (Common Vulnerability Scoring System) hodnotí závažnost na stupnici 0–10. Posuňte skóre nebo vyberte skutečnou zranitelnost.</p>
+      <div class="btns" id="cvss-ex" style="margin-bottom:1rem"></div>
+      <label class="lbl" for="cvss-s">Skóre: <span id="cvss-v"></span></label>
+      <input type="range" id="cvss-s" min="0" max="10" step="0.1" value="7.5">
+      <div class="meter" style="height:14px"><span id="cvss-bar"></span></div>
+      <div class="result" id="cvss-out"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 03 MALWARE ================= -->
+<section class="topic" id="m-uvod" data-ch="03" data-title="Druhy malwaru">
+  <div class="topic-head">
+    <h1>Malware a jeho druhy</h1>
+    <p class="lead">Malware (z „malicious software“) je škodlivý program, který má poškodit systém, ukrást data nebo získat neoprávněný přístup. Jednotlivé druhy se liší hlavně tím, jak se šíří a co je jejich cílem.</p>
+  </div>
+  <div class="tbl"><table>
+    <thead><tr><th>Druh</th><th>Jak se šíří / chová</th><th>Hlavní cíl</th></tr></thead>
+    <tbody>
+      <tr><td><b>Virus</b></td><td>Připojí se k souboru nebo programu, aktivuje se při jeho spuštění.</td><td>Poškození dat, šíření</td></tr>
+      <tr><td><b>Červ (worm)</b></td><td>Šíří se sám po síti, nepotřebuje hostitelský soubor.</td><td>Rychlé šíření, přetížení sítě</td></tr>
+      <tr><td><b>Trojský kůň</b></td><td>Maskuje se za užitečný program, sám se nešíří.</td><td>Zadní vrátka, krádež dat</td></tr>
+      <tr><td><b>Ransomware</b></td><td>Zašifruje data a žádá výkupné.</td><td>Finanční zisk z vydírání</td></tr>
+      <tr><td><b>Spyware</b></td><td>Tajně sleduje uživatele.</td><td>Sběr citlivých informací</td></tr>
+      <tr><td><b>Keylogger</b></td><td>Zaznamenává stisky kláves.</td><td>Krádež hesel</td></tr>
+      <tr><td><b>Adware</b></td><td>Vnucuje reklamy, přesměrovává.</td><td>Zisk z reklam</td></tr>
+      <tr><td><b>Rootkit</b></td><td>Získá vysoká oprávnění a skryje svou přítomnost.</td><td>Dlouhodobá skrytá kontrola</td></tr>
+      <tr><td><b>Botnet (bot)</b></td><td>Zařízení se zařadí do sítě ovládané útočníkem.</td><td>DDoS, spam, těžba</td></tr>
+    </tbody></table></div>
+  <div class="callout fix"><span class="ct">Upřesnění pojmů</span>
+    <p><b>Zero-day exploit</b> není druh malwaru, ale využití dosud neopravené zranitelnosti – malware ji může použít jako způsob průniku. <b>Adware</b> a <b>keylogger</b> se často řadí pod spyware. Hranice mezi druhy nejsou ostré: moderní škodlivý kód bývá kombinace (např. trojan, který stáhne ransomware).</p>
+  </div>
+  <div class="callout ok"><span class="ct">Základní obrana (platí pro celou kapitolu)</span>
+    <p>Aktualizovaný systém a aplikace · antivirus · opatrnost u příloh a odkazů · software jen z důvěryhodných zdrojů · a hlavně <b>pravidelné zálohy</b>, nejlépe odpojené od sítě – to je jediná spolehlivá obrana proti ransomwaru.</p>
+  </div>
+
+  <div class="sim" data-sim="spread" id="sim-spread">
+    <div class="sim-head"><span class="badge g">Simulace</span><h3>Virus vs. červ: jak se liší šíření</h3></div>
+    <div class="sim-body">
+      <p class="muted">Síť 120 počítačů. Virus potřebuje, aby uživatel spustil nakažený soubor – šíří se pomalu a náhodně. Červ se po síti kopíruje sám. Sledujte rozdíl v rychlosti.</p>
+      <div class="btns"><button class="btn" id="spread-v" type="button">Spustit jako virus</button><button class="btn" id="spread-w" type="button">Spustit jako červ</button><button class="btn sec" id="spread-r" type="button">Reset</button></div>
+      <div class="stats" style="margin-top:1rem"><div class="stat"><b id="spread-n">0</b><small>nakažených</small></div><div class="stat"><b id="spread-t">0</b><small>krok (tik)</small></div><div class="stat"><b id="spread-mode">—</b><small>režim</small></div></div>
+      <div class="netgrid" id="spread-grid" style="margin-top:.5rem"></div>
+      <div class="result" id="spread-out" hidden></div>
+    </div>
+  </div>
+</section>
+
+<section class="topic" id="m-viry" data-ch="03" data-title="Slavné viry a červi">
+  <div class="topic-head">
+    <h1>Slavné viry a červi</h1>
+    <p class="lead">Historie malwaru je zároveň historií kybernetické bezpečnosti. Tyto případy ukázaly, jak velké škody dokáže kód napáchat – od smazaných fotek po sabotáž jaderného zařízení.</p>
+  </div>
+  <ul class="timeline">
+    <li><span class="yr">2000</span><b>ILOVEYOU</b> – e-mailový červ s přílohou „milostného dopisu“. Rozeslal se na všechny kontakty oběti a přepisoval soubory. Škody v řádu miliard dolarů.</li>
+    <li><span class="yr">2003</span><b>Blaster</b> – červ zneužívající chybu Windows, infikované počítače měly útočit na web Microsoftu a často se samy restartovaly.</li>
+    <li><span class="yr">2004</span><b>MyDoom</b> – jeden z nejrychleji se šířících e-mailových červů, otevíral zadní vrátka a zahlcoval cíle.</li>
+    <li><span class="yr">2008</span><b>Conficker</b> – využil chybu Windows a USB disky, vytvořil obří botnet, infikoval miliony počítačů.</li>
+    <li><span class="yr">2010</span><b>Stuxnet</b> – mimořádně sofistikovaný červ, který sabotoval řídicí systémy odstředivek v íránském jaderném zařízení. První známý případ, kdy kód poškodil fyzickou infrastrukturu.</li>
+    <li><span class="yr">2013</span><b>CryptoLocker</b> – jeden z prvních masově rozšířených ransomwarů, výkupné v bitcoinech.</li>
+    <li><span class="yr">2017</span><b>WannaCry</b> – ransomware šířící se chybou EternalBlue; zasáhl přes 200 000 počítačů ve 150 zemích, mimo jiné britské nemocnice NHS.</li>
+  </ul>
+  <div class="callout fix"><span class="ct">Oprava v podkladech</span>
+    <p>V původním seznamu byl uveden „malware Kaspersky (2017)“. <b>Kaspersky</b> je výrobce antiviru, ne malware. V roce 2017 se naopak řešil zákaz jeho softwaru v úřadech USA. Záznam jsme z přehledu odstranili.</p>
+  </div>
+  <div class="sim" data-sim="quiz" id="sim-viry">
+    <div class="sim-head"><span class="badge b">Procvičení</span><h3>Poznáte malware podle popisu?</h3></div>
+    <div class="sim-body"><p class="muted">Krátký kvíz k této kapitole.</p></div>
+    <script type="application/json">[
+      {"q":"Který škodlivý kód je považován za první, který způsobil fyzické poškození průmyslového zařízení?","a":["ILOVEYOU","Stuxnet","WannaCry","Conficker"],"c":1,"e":"Stuxnet (2010) sabotoval odstředivky v íránském jaderném zařízení."},
+      {"q":"Čím se liší červ od viru?","a":["Červ je vždy méně nebezpečný","Červ se šíří sám po síti bez hostitelského souboru","Virus se šíří jen přes USB","Není mezi nimi rozdíl"],"c":1,"e":"Virus potřebuje, aby uživatel spustil nakažený soubor; červ se kopíruje samostatně."},
+      {"q":"Co dělá ransomware?","a":["Zobrazuje reklamy","Zaznamenává stisky kláves","Zašifruje data a žádá výkupné","Zrychluje počítač"],"c":2,"e":"Odtud název – „ransom“ znamená výkupné."},
+      {"q":"Jaká obrana nejspolehlivěji zachrání data po útoku ransomwaru?","a":["Rychlejší procesor","Odpojená záloha dat","Více RAM","Změna tapety"],"c":1,"e":"Z odpojené (offline) zálohy data obnovíte bez placení výkupného."}
+    ]</script>
+  </div>
+</section>
+
+<section class="topic" id="m-trojan" data-ch="03" data-title="Trojské koně a spyware">
+  <div class="topic-head">
+    <h1>Trojské koně a spyware</h1>
+    <p class="lead">Spojuje je jedno: pracují skrytě. Trojský kůň se vydává za užitečný program, spyware tiše sbírá informace. Oběť často dlouho nic nepozná.</p>
+  </div>
+  <h2>Trojské koně</h2>
+  <p>Trojan se tváří jako legitimní aplikace nebo soubor. Po spuštění může nainstalovat zadní vrátka, krást údaje nebo stáhnout další malware. Sám se nešíří – spoléhá na to, že ho uživatel spustí.</p>
+  <div class="grid">
+    <div class="card"><h4>Bankovní trojany</h4><p class="small">Zeus, Emotet, Trojan.Banker, Android/Spy.Banker. Kradou přihlašovací údaje k bankovnictví, přesměrovávají na falešné stránky, odečítají SMS kódy.</p></div>
+    <div class="card"><h4>RAT – Remote Access Trojan</h4><p class="small">Dávají útočníkovi vzdálenou kontrolu: záznam kláves, čtení souborů, přístup ke kameře a mikrofonu (např. DarkComet).</p></div>
+    <div class="card"><h4>Špionážní nástroje</h4><p class="small">FinFisher/FinSpy – komerční spyware zneužitý proti novinářům a aktivistům.</p></div>
+    <div class="card"><h4>FakeAV</h4><p class="small">Falešný „antivirus“, který straší neexistujícími hrozbami a vymáhá platbu za „vyčištění“.</p></div>
+  </div>
+  <h2>Spyware</h2>
+  <p>Spyware se nainstaluje bez vědomí uživatele a sbírá data: historii prohlížení, hesla, stisky kláves. Patří sem <b>keyloggery</b>, <b>adware</b> sledující chování, nástroje měnící DNS (DNSChanger) i cílené špionážní kampaně (Red October, BlackShades).</p>
+  <div class="callout warn"><span class="ct">Varovné signály</span><p>Náhlé zpomalení, neznámé procesy, vybitá baterie, neočekávaný datový provoz, změněná domovská stránka nebo vyhledávač, rozsvícená kontrolka kamery. U mobilu i aplikace, které chtějí zbytečně mnoho oprávnění.</p></div>
+  <div class="sim" data-sim="classify" id="sim-trojan">
+    <div class="sim-head"><span class="badge b">Procvičení</span><h3>Trojan, nebo červ?</h3></div>
+    <div class="sim-body"><p class="muted">Rozhodněte podle způsobu šíření.</p></div>
+    <script type="application/json">{"cats":["Trojský kůň","Červ"],"items":[
+      {"t":"Program „Faktura.pdf.exe“ v příloze; po spuštění otevře útočníkovi vzdálený přístup.","c":0,"e":"Maskuje se za dokument a potřebuje spuštění uživatelem."},
+      {"t":"Kód se sám kopíruje na další počítače ve školní síti bez zásahu uživatele.","c":1,"e":"Samostatné šíření po síti je znak červa."},
+      {"t":"Falešná mobilní bankovní aplikace odesílá zadané přihlašovací údaje útočníkovi.","c":0,"e":"Klasický bankovní trojan."},
+      {"t":"Malware zneužije chybu služby a během hodin zasáhne tisíce strojů po světě.","c":1,"e":"Rychlé samostatné šíření – chování červa (např. WannaCry)."}
+    ]}</script>
+  </div>
+</section>
+
+<section class="topic" id="m-ransomware" data-ch="03" data-title="Ransomware">
+  <div class="topic-head">
+    <h1>Ransomware</h1>
+    <p class="lead">Nejobávanější druh malwaru pro firmy a nemocnice. Zašifruje data a za dešifrovací klíč žádá výkupné – dnes často i s hrozbou zveřejnění ukradených dat (dvojité vydírání).</p>
+  </div>
+  <ul class="list">
+    <li><b>WannaCry (2017)</b> – globální vlna, chyba EternalBlue, zasažené nemocnice.</li>
+    <li><b>CryptoLocker (2013)</b> – průkopník moderního ransomwaru.</li>
+    <li><b>NotPetya (2017)</b> – tvářil se jako ransomware, ale cílem byla destrukce; obří škody na Ukrajině i v nadnárodních firmách.</li>
+    <li><b>Ryuk, REvil/Sodinokibi</b> – cílené útoky na velké organizace, výkupné v milionech.</li>
+    <li><b>Jigsaw (2016)</b> – psychologický nátlak: za každou hodinu neplacení mazal část souborů.</li>
+  </ul>
+  <div class="sim" data-sim="ransom" id="sim-ransom">
+    <div class="sim-head"><span class="badge g">Simulace</span><h3>Proč je záloha důležitější než výkupné</h3></div>
+    <div class="sim-body">
+      <p class="muted">Modelový disk s pracovními soubory. Spusťte útok a vyzkoušejte obě cesty obnovy. Nic se tu doopravdy nešifruje – jde o animaci principu.</p>
+      <div class="btns">
+        <label class="chk" style="margin-right:1rem"><input type="checkbox" id="ransom-bak" checked><span>Mám offline zálohu z včerejška</span></label>
+      </div>
+      <div class="btns" style="margin:.8rem 0"><button class="btn red" id="ransom-go" type="button">Spustit útok</button><button class="btn acc" id="ransom-pay" type="button" disabled>Zaplatit výkupné</button><button class="btn" id="ransom-restore" type="button" disabled>Obnovit ze zálohy</button><button class="btn sec" id="ransom-reset" type="button">Reset</button></div>
+      <div class="files" id="ransom-files"></div>
+      <div id="ransom-noteHost"></div>
+      <div class="result" id="ransom-out" hidden></div>
+    </div>
+  </div>
+</section>
+
+<section class="topic" id="m-antivir" data-ch="03" data-title="Antivir a antispam">
+  <div class="topic-head">
+    <h1>Jak antivir a antispam poznají hrozbu</h1>
+    <p class="lead">Žádná jediná metoda nestačí. Antivirové i antispamové nástroje kombinují několik technik – a ani tak nejsou stoprocentní.</p>
+  </div>
+  <div class="split">
+    <div>
+      <h3>Antivir</h3>
+      <ul class="list blue">
+        <li><b>Signatury</b> – porovnání s databází známého malwaru. Rychlé, ale slepé vůči novinkám.</li>
+        <li><b>Heuristika</b> – hledání podezřelých rysů i bez přesné signatury.</li>
+        <li><b>Analýza chování</b> – sleduje, co program dělá (např. hromadné šifrování souborů).</li>
+        <li><b>Sandbox</b> – spuštění v izolovaném prostředí na zkoušku.</li>
+        <li><b>Kontrola v reálném čase</b> – každý otevíraný soubor se prověří hned.</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Antispam</h3>
+      <ul class="list green">
+        <li><b>Pravidla</b> – klíčová slova, adresy, domény.</li>
+        <li><b>Black/whitelist</b> – blokované a důvěryhodné zdroje.</li>
+        <li><b>Analýza obsahu</b> – typické znaky spamu v textu a přílohách.</li>
+        <li><b>Strojové učení</b> – model se učí z obrovského množství zpráv.</li>
+        <li><b>Reputace odesílatele</b> – historie a hodnocení serveru.</li>
+      </ul>
+    </div>
+  </div>
+  <p class="small muted">Známé antiviry: Windows Defender, ESET, Bitdefender, Kaspersky, Avast, Norton, McAfee. Antispam: SpamAssassin, Proofpoint, Microsoft EOP a další.</p>
+  <div class="sim" data-sim="detect" id="sim-detect">
+    <div class="sim-head"><span class="badge g">Simulace</span><h3>Signatura vs. heuristika</h3></div>
+    <div class="sim-body">
+      <p class="muted">Databáze signatur zná jen to, co už někdo viděl. Heuristika odhadne hrozbu podle chování, ale občas se splete (falešný poplach). Pošlete vzorky skenerem.</p>
+      <div class="row" style="margin:.5rem 0 1rem">
+        <label class="chk"><input type="checkbox" id="det-h" checked><span>Zapnout heuristiku</span></label>
+        <div class="field" style="flex:0 0 auto"><label class="lbl" for="det-sens">Citlivost: <span id="det-sv">střední</span></label><input type="range" id="det-sens" min="1" max="3" value="2"></div>
+      </div>
+      <button class="btn" id="det-run" type="button">Proskenovat 6 souborů</button>
+      <div class="pkt-log" id="det-log" style="margin-top:1rem"></div>
+      <div class="result" id="det-out" hidden></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 04 HACKING ================= -->
+<section class="topic" id="h-principy" data-ch="04" data-title="Principy a typy hackerů">
+  <div class="topic-head">
+    <h1>Hacking: principy a typy hackerů</h1>
+    <p class="lead">Hacking je zkoumání a překonávání hranic systému. Zda jde o práci, nebo zločin, rozhoduje jediné: <b>souhlas vlastníka</b> a úmysl.</p>
+  </div>
+  <h2>Obecný postup útoku (útočný řetězec)</h2>
+  <p>Útoky mívají podobnou osnovu. Znát ji je užitečné hlavně pro obránce – ukazuje, kde řetěz přetnout.</p>
+  <ol class="list">
+    <li><b>Průzkum</b> – sběr veřejně dostupných informací o cíli.</li>
+    <li><b>Hledání zranitelností</b> – slabě nastavené služby, zastaralý software.</li>
+    <li><b>Získání přístupu</b> – využitím zranitelnosti, slabého hesla nebo sociálního inženýrství.</li>
+    <li><b>Udržení přístupu</b> – zadní vrátka pro pozdější návrat.</li>
+    <li><b>Zakrytí stop</b> – mazání logů, aby obrana nic nenašla.</li>
+  </ol>
+  <div class="callout warn"><span class="ct">Etická a právní hranice</span><p>Stejné kroky dělá penetrační tester i útočník. Rozdíl je v <b>písemném pověření</b>. Bez něj jde o trestný čin podle § 230 trestního zákoníku – a to i tehdy, když „jen zkoušíte, jestli to jde“.</p></div>
+  <h2>Typy hackerů podle úmyslu</h2>
+  <div class="tbl"><table>
+    <thead><tr><th>Typ</th><th>Úmysl</th><th>Právní status</th><th>Příklad činnosti</th></tr></thead>
+    <tbody>
+      <tr><td><b>White hat</b></td><td>Etický</td><td>Legální (s pověřením)</td><td>Penetrační testování</td></tr>
+      <tr><td><b>Grey hat</b></td><td>Smíšený</td><td>Zpravidla nelegální</td><td>Upozorní na chybu, kterou našel bez povolení</td></tr>
+      <tr><td><b>Black hat</b></td><td>Škodlivý</td><td>Nelegální</td><td>Krádež dat, šíření malwaru</td></tr>
+      <tr><td><b>Cracker</b></td><td>Prolomení ochran</td><td>Nelegální</td><td>Obcházení licencí, šíření pirátských kopií</td></tr>
+    </tbody></table></div>
+  <p class="small muted">V organizacích se také mluví o <b>red teamu</b> (útočí nanečisto) a <b>blue teamu</b> (brání). Jejich spoluprací je <b>purple team</b>.</p>
+  <div class="sim" data-sim="quiz" id="sim-hat">
+    <div class="sim-head"><span class="badge b">Procvičení</span><h3>Který klobouk?</h3></div>
+    <div class="sim-body"></div>
+    <script type="application/json">[
+      {"q":"Firma najme experta, aby se s povolením pokusil proniknout do její sítě a sepsal nalezené chyby. Jde o:","a":["Black hat","White hat","Cracker","Script kiddie"],"c":1,"e":"Práce s písemným souhlasem = etický hacking, white hat."},
+      {"q":"Někdo bez povolení pronikne na web školy, nic neukradne a pošle řediteli e-mail o nalezené chybě. Spíše:","a":["White hat","Grey hat","Black hat","Blue team"],"c":1,"e":"Dobrý úmysl, ale bez povolení – to je typický grey hat a zpravidla je to i tak nelegální."},
+      {"q":"Tým, který v organizaci brání systémy a reaguje na incidenty, se nazývá:","a":["Red team","Blue team","Green team","Cracker"],"c":1,"e":"Blue team = obrana. Red team útočí nanečisto."}
+    ]</script>
+  </div>
+</section>
+
+<section class="topic" id="h-techniky" data-ch="04" data-title="Techniky útoků">
+  <div class="topic-head">
+    <h1>Techniky útoků – přehled pro obránce</h1>
+    <p class="lead">Následující přehled slouží k tomu, abyste útok <b>poznali a uměli se bránit</b>. Neobsahuje návody k provedení útoku.</p>
+  </div>
+  <div class="grid two">
+    <div class="card"><span class="tag">Síť</span><h4>Skenování portů</h4><p class="small">Zjišťování, které služby na cíli běží (např. nástrojem Nmap). <b>Obrana:</b> zavřít nepotřebné porty, firewall.</p></div>
+    <div class="card"><span class="tag">Síť</span><h4>Man-in-the-Middle</h4><p class="small">Útočník se vloží mezi dvě strany a odposlouchává. <b>Obrana:</b> HTTPS, VPN, nepoužívat nezabezpečené Wi-Fi.</p></div>
+    <div class="card"><span class="tag">Síť</span><h4>Sniffing</h4><p class="small">Odposlech provozu (Wireshark). <b>Obrana:</b> šifrování komunikace.</p></div>
+    <div class="card"><span class="tag">Hesla</span><h4>Brute force / slovníkový útok</h4><p class="small">Zkoušení kombinací či seznamu běžných hesel. <b>Obrana:</b> dlouhá hesla, limit pokusů, 2FA.</p></div>
+    <div class="card"><span class="tag">Web</span><h4>SQL injection</h4><p class="small">Vložení vstupu, který změní databázový dotaz. <b>Obrana:</b> parametrizované dotazy.</p></div>
+    <div class="card"><span class="tag">Web</span><h4>Cross-Site Scripting (XSS)</h4><p class="small">Vložení skriptu, který se spustí jiným uživatelům. <b>Obrana:</b> escapování výstupu, CSP.</p></div>
+    <div class="card"><span class="tag">Dostupnost</span><h4>DoS / DDoS</h4><p class="small">Zahlcení služby požadavky (DDoS z botnetu). <b>Obrana:</b> filtrace provozu, CDN.</p></div>
+    <div class="card"><span class="tag">Přístup</span><h4>Eskalace oprávnění, backdoor</h4><p class="small">Získání vyšších práv a trvalého vstupu. <b>Obrana:</b> princip nejmenších oprávnění, aktualizace.</p></div>
+    <div class="card"><span class="tag">Lidé</span><h4>Sociální inženýrství</h4><p class="small">Manipulace člověka místo techniky. <b>Obrana:</b> školení, ověřování identit (viz kapitola 05).</p></div>
+    <div class="card"><span class="tag">Identita</span><h4>Spoofing</h4><p class="small">Podvržení adresy (IP, e-mail). <b>Obrana:</b> SPF/DKIM/DMARC, kontrola odesílatele.</p></div>
+  </div>
+  <div class="callout ok"><span class="ct">Dvě simulace útoku, kde jste obráncem</span>
+    <p>Dvě nejčastější webové zranitelnosti – <b>XSS</b> a <b>SQL injection</b> – si můžete vyzkoušet na vlastním bezpečném modelu v samostatných tématech této kapitoly. Uvidíte, proč útok funguje a jak mu správně napsaný kód zabrání.</p>
+  </div>
+</section>
+
+<section class="topic" id="h-xss" data-ch="04" data-title="Simulace: XSS">
+  <div class="topic-head">
+    <h1>Cross-Site Scripting (XSS)</h1>
+    <p class="lead">Stránka vypíše vstup od uživatele zpět, aniž by ho ošetřila. Útočník tam místo textu vloží skript, který se spustí ostatním návštěvníkům. Vyzkoušejte si rozdíl mezi zranitelnou a ošetřenou stránkou.</p>
+  </div>
+  <div class="sim" data-sim="xss" id="sim-xss">
+    <div class="sim-head"><span class="badge g">Simulace</span><h3>Kniha návštěv: zranitelná vs. ošetřená</h3></div>
+    <div class="sim-body">
+      <p class="muted">Napište „komentář“ a odešlete ho. Vlevo stránka vstup nijak neošetří, vpravo ho správně zneškodní. Skript tu běží v sandboxu simulace, vašemu prohlížeči nemůže ublížit.</p>
+      <div class="row" style="margin:.5rem 0 1rem">
+        <div class="field" style="flex-basis:100%"><label class="lbl" for="xss-in">Komentář</label><input class="inp mono" id="xss-in" value="&lt;img src=x onerror=&quot;alert('XSS')&quot;&gt;" ></div>
+      </div>
+      <div class="btns"><button class="btn" id="xss-send" type="button">Odeslat komentář</button>
+        <span class="chip" data-x="Ahoj, super stránka!">neškodný text</span>
+        <span class="chip" data-x="&lt;b&gt;tučně&lt;/b&gt;">HTML tag</span>
+        <span class="chip" data-x="&lt;script&gt;steal(document.cookie)&lt;/script&gt;">skript s cookie</span>
+      </div>
+      <div class="split" style="margin-top:1rem">
+        <div><h4 style="color:var(--danger-soft)">Zranitelná stránka</h4><div class="out" id="xss-bad" aria-live="polite"></div></div>
+        <div><h4 style="color:var(--g2)">Ošetřená stránka (escapování)</h4><div class="out" id="xss-good" aria-live="polite"></div></div>
+      </div>
+      <div class="result" id="xss-out" hidden></div>
+      <div class="callout" style="margin-top:1.2rem"><span class="ct">Obrana</span><p>Vstup od uživatele nikdy nevkládejte do stránky „jak přišel“. <b>Escapujte</b> ho (&lt; na <code>&amp;lt;</code> apod.), používejte <code>textContent</code> místo <code>innerHTML</code> a nasaďte <b>Content-Security-Policy</b>. Pak se z tagu stane neškodný text.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="topic" id="h-sqli" data-ch="04" data-title="Simulace: SQL injection">
+  <div class="topic-head">
+    <h1>SQL injection</h1>
+    <p class="lead">Když se vstup od uživatele lepí přímo do SQL dotazu, může ho útočník „rozbít“ a změnit jeho význam. Klasikou je přihlášení bez hesla.</p>
+  </div>
+  <div class="sim" data-sim="sqli" id="sim-sqli">
+    <div class="sim-head"><span class="badge g">Simulace</span><h3>Přihlášení k modelové databázi</h3></div>
+    <div class="sim-body">
+      <p class="muted">Zkuste se přihlásit jako <code>admin</code> se správným heslem, se špatným heslem, a pak zkuste do pole jméno zadat trik <code>' OR '1'='1</code>. Přepínač vpravo zapíná obranu.</p>
+      <div class="row">
+        <div class="field"><label class="lbl" for="sqli-u">Jméno</label><input class="inp mono" id="sqli-u" value="admin"></div>
+        <div class="field"><label class="lbl" for="sqli-p">Heslo</label><input class="inp mono" id="sqli-p" value="cokoliv"></div>
+        <label class="chk" style="flex:0 0 auto"><input type="checkbox" id="sqli-safe"><span>Parametrizovaný dotaz (obrana)</span></label>
+      </div>
+      <div class="btns" style="margin:.8rem 0">
+        <button class="btn" id="sqli-go" type="button">Přihlásit</button>
+        <span class="chip" data-u="admin" data-p="' OR '1'='1">vložit útok</span>
+        <span class="chip" data-u="admin" data-p="Tr0ub4dour&amp;3">správné heslo</span>
+      </div>
+      <h4>Sestavený dotaz</h4>
+      <div class="out" id="sqli-q"></div>
+      <div class="result" id="sqli-out" hidden></div>
+      <div class="callout" style="margin-top:1.2rem"><span class="ct">Obrana</span><p>Nikdy neskládejte SQL spojováním řetězců. Používejte <b>parametrizované dotazy</b> (prepared statements) – vstup se pak bere jako data, ne jako část příkazu, a trik <code>' OR '1'='1</code> se stane obyčejným (neplatným) jménem.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="topic" id="h-pentest" data-ch="04" data-title="Penetrační testování">
+  <div class="topic-head">
+    <h1>Penetrační testování a hackerské distribuce</h1>
+    <p class="lead">Penetrační test je útok nanečisto, povolený vlastníkem. Cílem je najít a opravit slabiny dřív než skutečný útočník.</p>
+  </div>
+  <h2>Fáze penetračního testu</h2>
+  <ol class="list">
+    <li><b>Plánování a rozsah</b> – co se smí testovat a jak, vše písemně.</li>
+    <li><b>Průzkum a skenování</b> – mapování cíle (Nmap, Nikto, OpenVAS).</li>
+    <li><b>Hledání zranitelností</b> – ověření, co by šlo zneužít.</li>
+    <li><b>Řízené využití</b> – prokázání dopadu bez způsobení škody.</li>
+    <li><b>Vyhodnocení dopadu</b> – kam až by se útočník dostal.</li>
+    <li><b>Zpráva</b> – nálezy seřazené podle závažnosti a doporučení oprav.</li>
+  </ol>
+  <div class="grid">
+    <div class="card"><h4>Druhy podle znalostí testera</h4><p class="small"><b>Black-box</b> – tester neví nic. <b>White-box</b> – má zdrojový kód a dokumentaci. <b>Grey-box</b> – něco mezi.</p></div>
+    <div class="card"><h4>Podle pozice</h4><p class="small"><b>Externí</b> – útok zvenčí (z internetu). <b>Interní</b> – simulace zaměstnance či škůdce uvnitř sítě.</p></div>
+    <div class="card"><h4>Nástroje</h4><p class="small">Metasploit, Burp Suite, Wireshark, OWASP ZAP, Hydra. Patří k nim i specializované distribuce.</p></div>
+  </div>
+  <h2>Distribuce Linuxu pro bezpečnostní práci</h2>
+  <div class="tbl"><table>
+    <thead><tr><th>Distribuce</th><th>Zaměření</th><th>Vhodné pro</th></tr></thead>
+    <tbody>
+      <tr><td><b>Kali Linux</b></td><td>Penetrační testování, stovky nástrojů</td><td>Začátečníky i pokročilé</td></tr>
+      <tr><td><b>Parrot Security OS</b></td><td>Bezpečnost, anonymita, forenzní analýza</td><td>Slabší hardware, soukromí</td></tr>
+      <tr><td><b>BlackArch</b></td><td>Nástavba Archu, tisíce nástrojů</td><td>Pokročilé</td></tr>
+      <tr><td><b>CAINE / DEFT</b></td><td>Digitální forenzní analýza</td><td>Vyšetřování incidentů</td></tr>
+      <tr><td><b>Tails</b></td><td>Anonymita přes síť Tor</td><td>Ochranu soukromí</td></tr>
+    </tbody></table></div>
+  <div class="callout warn"><span class="ct">Připomínka</span><p>Tyto nástroje jsou legální a běžné v praxi bezpečnostních specialistů. Jejich použití proti cizímu systému bez povolení je ale trestné – samotné držení Kali Linuxu z vás nedělá zločince, jeho zneužití ano.</p></div>
+</section>
+
+<!-- ================= 05 SOCIÁLNÍ INŽENÝRSTVÍ (ukázky technik) ================= -->
+<section class="topic" id="si-uvod" data-ch="05" data-title="Sociální inženýrství">
+  <div class="topic-head">
+    <h1>Sociální inženýrství</h1>
+    <p class="lead">Nejslabším článkem bezpečnosti bývá člověk. Sociální inženýrství útočí na lidskou důvěru, strach a ochotu pomoci – obchází tím i tu nejlepší techniku.</p>
+  </div>
+  <p>Útočník nehledá chybu v systému, ale v chování. Spoléhá na to, že oběť v tísni, pod nátlakem autority nebo z ochoty udělá něco, co by jinak neudělala. Proto je nejlepší obranou <b>vzdělávání a zdravá nedůvěra</b>.</p>
+  <h2>Nejčastější techniky</h2>
+  <div class="grid two">
+    <div class="card"><h4>Phishing</h4><p class="small">Falešná zpráva „od banky či úřadu“ láká přihlašovací nebo platební údaje. Samostatné téma níže.</p></div>
+    <div class="card"><h4>Spear phishing a whaling</h4><p class="small">Cílený phishing na konkrétní osobu (spear), případně na vedení firmy (whaling – „velká ryba“).</p></div>
+    <div class="card"><h4>Pretexting</h4><p class="small">Vymyšlený příběh – útočník se vydává např. za IT podporu a žádá „kontrolní“ údaje.</p></div>
+    <div class="card"><h4>Baiting</h4><p class="small">Návnada: nalezený USB disk, „film zdarma“. Po připojení či stažení se spustí malware.</p></div>
+    <div class="card"><h4>Vishing a smishing</h4><p class="small">Phishing po telefonu (vishing) nebo přes SMS (smishing).</p></div>
+    <div class="card"><h4>Scareware</h4><p class="small">Vyvolá strach („máte 5 virů!“) a nabídne „řešení“, které je samo malware.</p></div>
+    <div class="card"><h4>Quizzes a falešné ankety</h4><p class="small">Zábavné kvízy sbírají odpovědi, které bývají i odpovědí na bezpečnostní otázky (jméno mazlíčka…).</p></div>
+    <div class="card"><h4>Tailgating / piggybacking</h4><p class="small">Fyzický průnik „na ocásek“ za oprávněnou osobou do zabezpečených prostor.</p></div>
+    <div class="card"><h4>Shoulder surfing</h4><p class="small">Odkoukání PINu nebo hesla přes rameno.</p></div>
+    <div class="card"><h4>BEC – Business Email Compromise</h4><p class="small">Útočník se vydává za ředitele a žádá naléhavý převod peněz.</p></div>
+  </div>
+  <div class="callout warn"><span class="ct">Na co útočníci tlačí</span><p><b>Autorita</b> („volá vám ředitel“), <b>naléhavost</b> („do hodiny, jinak…“), <b>strach</b>, <b>zvědavost</b> a <b>ochota pomoci</b>. Jakmile zpráva tlačí na čas a emoce, zpomalte a ověřte ji jiným kanálem.</p></div>
+  <h2>Obrana</h2>
+  <ul class="list green">
+    <li><b>Ověřujte identitu</b> jiným kanálem – zavolejte na oficiální číslo, ne na to z e-mailu.</li>
+    <li>Citlivé údaje nikdy nesdělujte na vyžádání v e-mailu, SMS ani po telefonu.</li>
+    <li>Nepřipojujte nalezené USB, nestahujte z neznámých zdrojů.</li>
+    <li>Pravidelné školení a kultura, kde se nikdo nebojí zeptat a ověřit.</li>
+  </ul>
+  <div class="callout"><span class="ct">Vyzkoušejte si techniky</span><p>Jednotlivé techniky si v této kapitole projdete i prakticky: <a href="#si-phishing">phishing</a>, <a href="#si-spear">cílené útoky</a> (spear phishing, whaling, BEC), <a href="#si-pretext">pretexting, vishing a smishing</a>, <a href="#si-ostatni">návnady a nátlak</a> (baiting, scareware, falešné kvízy) a <a href="#si-fyzicke">fyzické sociální inženýrství</a>.</p></div>
+  <div class="sim" data-sim="classify" id="sim-si">
+    <div class="sim-head"><span class="badge b">Procvičení</span><h3>Pojmenujte techniku</h3></div>
+    <div class="sim-body"><p class="muted">Jaká technika sociálního inženýrství je ve scénáři použita?</p></div>
+    <script type="application/json">{"cats":["Phishing / smishing","Pretexting","Baiting"],"items":[
+      {"t":"SMS: „Vaše zásilka čeká, doplaťte 29 Kč clo: odkaz.“","c":0,"e":"Smishing – phishing přes SMS."},
+      {"t":"Volá „kolega z IT“, že musí ověřit vaše heslo kvůli údržbě serveru.","c":1,"e":"Pretexting – vymyšlený příběh a falešná role."},
+      {"t":"Na parkovišti leží USB disk s popiskem „Výplaty 2025“.","c":2,"e":"Baiting – návnada, která po připojení spustí malware."},
+      {"t":"E-mail „od banky“ s odkazem na stránku, kde máte „ověřit“ přihlášení.","c":0,"e":"Klasický phishing."}
+    ]}</script>
+  </div>
+</section>
+
+<section class="topic" id="si-phishing" data-ch="05" data-title="Simulace: Phishing">
+  <div class="topic-head">
+    <h1>Phishing pod lupou</h1>
+    <p class="lead">Phishing probíhá v pěti krocích: vytvoření falešné zprávy, rozeslání, falešný odkaz či příloha, získání údajů a jejich zneužití. Naučte se poznat podezřelé znaky dřív, než kliknete.</p>
+  </div>
+  <div class="grid">
+    <div class="card"><span class="tag">Formy</span><h4>Podle kanálu</h4><p class="small">E-mail · spear phishing · whaling · vishing (telefon) · smishing (SMS) · angler phishing (falešné účty na sítích) · pharming (podvržení DNS).</p></div>
+    <div class="card"><span class="tag">Varovné znaky</span><h4>Co prozradí podvod</h4><p class="small">Neosobní oslovení, pravopisné chyby, tlak na čas, odkaz nesedící s textem, žádost o hesla, adresa odesílatele z cizí domény, příloha <code>.exe</code>.</p></div>
+    <div class="card"><span class="tag">Obrana</span><h4>Co dělat</h4><p class="small">Najet myší na odkaz a zkontrolovat cíl, ověřit u instituce přímo, zapnout 2FA, neotvírat přílohy od neznámých, hlásit IT.</p></div>
+  </div>
+  <div class="sim" data-sim="phish" id="sim-phish">
+    <div class="sim-head"><span class="badge g">Simulace</span><h3>Doručená pošta: najdi podvod</h3></div>
+    <div class="sim-body">
+      <p class="muted">Otevřete zprávu, najeďte myší na odkazy (ukáže se skutečný cíl) a <b>označte podezřelé prvky</b> kliknutím na zvýrazněný text. Pak zprávu vyhodnoťte. Všechny firmy i adresy jsou smyšlené.</p>
+      <div class="mail-app">
+        <div class="mail-list" id="phish-list" role="list"></div>
+        <div class="mail-view" id="phish-view"></div>
+      </div>
+      <div class="result" id="phish-out" hidden></div>
+    </div>
+  </div>
+</section>
+
+<section class="topic" id="si-spear" data-ch="05" data-title="Simulace: Cílené útoky">
+  <div class="topic-head">
+    <h1>Cílené útoky: spear phishing, whaling a BEC</h1>
+    <p class="lead">Čím víc o vás útočník ví, tím přesvědčivější zprávu napíše. Spear phishing míří na konkrétního člověka, whaling na vedení firmy a BEC se vydává za šéfa kvůli penězům. Palivem bývá to, co o sobě veřejně sdílíme.</p>
+  </div>
+  <div class="grid">
+    <div class="card"><span class="tag">Na míru</span><h4>Spear phishing</h4><p class="small">Zpráva šitá na míru jednomu člověku podle informací posbíraných z internetu (OSINT).</p></div>
+    <div class="card"><span class="tag">Velká ryba</span><h4>Whaling</h4><p class="small">Spear phishing cílený na „velké ryby“ – ředitele, jednatele, hlavní účetní.</p></div>
+    <div class="card"><span class="tag">Peníze</span><h4>BEC</h4><p class="small">Business Email Compromise – útočník se vydává za vedení a žádá naléhavý převod peněz nebo citlivá data.</p></div>
+  </div>
+  <div class="sim" data-sim="spear" id="sim-spear">
+    <div class="sim-head"><span class="badge g">Simulace</span><h3>Jak z veřejných střípků vznikne cílená zpráva</h3></div>
+    <div class="sim-body">
+      <p class="muted">Vlevo je smyšlený veřejný profil zaměstnankyně. Zaškrtávejte, co o sobě zveřejnila – vpravo se z toho skládá útočníkova zpráva a roste její věrohodnost. Ukazuje to, proč je zbytečné sdílení (oversharing) riziko.</p>
+      <div class="split">
+        <div>
+          <h4>Veřejně dostupné „střípky“ (OSINT)</h4>
+          <div id="spear-chk"></div>
+          <script type="application/json">{"chips":[
+            {"t":"Jméno a pozice: Jana Nováková, účetní","v":"oslovení jménem a znalost role","w":15,"use":"name"},
+            {"t":"Jméno nadřízeného: ředitel Petr Dvořák","v":"odvolání se na konkrétního šéfa","w":25,"use":"boss"},
+            {"t":"Dovolená: „Těším se na Chorvatsko od pondělí!“","v":"útok načasovaný na vaši nepřítomnost","w":20,"use":"holiday"},
+            {"t":"Fotka z konference Fakturace 2025","v":"věrohodná záminka k tématu faktur","w":20,"use":"conf"},
+            {"t":"Oblíbená kavárna u práce (fotka s polohou)","v":"osobní detail pro navázání důvěry","w":20,"use":"cafe"}
+          ]}</script>
+        </div>
+        <div>
+          <h4>Útočníkova zpráva</h4>
+          <div class="mail-paper" id="spear-msg"></div>
+          <label class="lbl">Věrohodnost zprávy pro oběť</label>
+          <div class="meter" style="height:14px"><span id="spear-bar"></span></div>
+          <div class="result" id="spear-out"></div>
+        </div>
+      </div>
+      <div class="callout" style="margin-top:1.2rem"><span class="ct">Obrana</span><p>Omezte, co o sobě a o firmě veřejně sdílíte. U neočekávaných žádostí – i když znají konkrétní detaily – <b>ověřte odesílatele jiným kanálem</b>. Znalost detailů není důkaz pravosti; dají se dohledat.</p></div>
+    </div>
+  </div>
+  <div class="sim" data-sim="decision" id="sim-bec">
+    <div class="sim-head"><span class="badge g">Simulace</span><h3>BEC: přišel „příkaz od ředitele“</h3></div>
+    <div class="sim-body">
+      <p class="muted">U každé situace zvolte nejlepší reakci. Jde o rozpoznání nátlaku a ověření, ne o rychlost.</p>
+      <script type="application/json">{"items":[
+        {"scen":"E-mail: „Jsem na jednání, nestíhám. Pošlete prosím ihned 48 000 Kč na účet dodavatele v příloze. Vyřídím papíry potom. Díky, ředitel Dvořák.“","q":"Co uděláte?","opts":[
+          {"t":"Platbu odešlu, je to přece příkaz ředitele.","v":"bad","fb":"Přesně na tuto poslušnost vůči autoritě a spěch BEC spoléhá. Nikdy neplaťte jen na základě e-mailu."},
+          {"t":"Zavolám řediteli na známé číslo a platbu ověřím.","v":"good","fb":"Správně – ověření druhým kanálem je jádro obrany proti BEC."},
+          {"t":"Odpovím na e-mail a zeptám se, zda je to opravdu on.","v":"risky","fb":"Odpověď dostane útočník (nebo jde o podvrženou adresu). Ověřujte mimo e-mail."}
+        ]},
+        {"scen":"Všimnete si, že adresa odesílatele je reditel@firma-cz.com místo obvyklé @firma.cz.","q":"Co to znamená?","opts":[
+          {"t":"Podvržená/podobná doména – silný signál podvodu.","v":"good","fb":"Správně. Útočníci registrují domény o písmeno jiné, aby zprávu zdůvěryhodnili."},
+          {"t":"Nic, firma má asi víc domén.","v":"bad","fb":"Rozdíl v doméně je klasický znak spoofingu. Vždy prověřte přesné znění adresy."}
+        ]}
+      ]}</script>
+    </div>
+  </div>
+</section>
+
+<section class="topic" id="si-pretext" data-ch="05" data-title="Simulace: Pretexting, vishing, smishing">
+  <div class="topic-head">
+    <h1>Pretexting, vishing a smishing</h1>
+    <p class="lead">Útočník si vymyslí příběh (pretext) a vžije se do role – IT technika, pracovníka banky, kurýra. Po telefonu jde o vishing, přes SMS o smishing. Cílem je, abyste pod záminkou sami vydali informace.</p>
+  </div>
+  <div class="grid">
+    <div class="card"><span class="tag">Příběh</span><h4>Pretexting</h4><p class="small">Smyšlený scénář a falešná role, které mají vzbudit důvěru a ospravedlnit žádost.</p></div>
+    <div class="card"><span class="tag">Telefon</span><h4>Vishing</h4><p class="small">Voice phishing – podvodný hovor, často s tlakem na čas a předstíranou autoritou.</p></div>
+    <div class="card"><span class="tag">SMS</span><h4>Smishing</h4><p class="small">Phishing přes SMS: falešný odkaz nebo žádost o údaje, typicky „zásilka“ nebo „banka“.</p></div>
+  </div>
+  <div class="sim" data-sim="dialog" id="sim-pretext">
+    <div class="sim-head"><span class="badge g">Simulace</span><h3>Vishing: hovor od „IT podpory“</h3></div>
+    <div class="sim-body">
+      <p class="muted">Volá vám člověk, který se vydává za IT podporu. V každém kroku vyberte svou odpověď a sledujte, čím byste útočníkovi pomohli. Nic se nikam neodesílá.</p>
+      <div class="dlg-host"></div>
+      <script type="application/json">{
+        "end":"Pravidlo: IT ani banka po vás nikdy nechtějí heslo ani ověřovací kód. Zavěste a zavolejte zpět na oficiální číslo.",
+        "steps":[
+          {"s":"Dobrý den, tady IT podpora. Řešíme výpadek pošty a potřebuji ověřit váš účet. Jste u počítače?","opts":[
+            {"t":"Ano, co potřebujete?","leak":false,"fb":"Zatím nic kritického, ale pozor – útočník si takto buduje důvěru."},
+            {"t":"Z jakého jste oddělení a na jaké lince? Zavolám zpět.","leak":false,"fb":"Výborně – ověření zpětným voláním je nejlepší obrana proti vishingu."}
+          ]},
+          {"s":"Není čas, server co chvíli spadne. Řekněte mi prosím své přihlašovací jméno.","opts":[
+            {"t":"Je to j.novakova.","leak":true,"fb":"Jméno bývá veřejné, přesto jste útočníkovi usnadnili práci a potvrdili platný účet."},
+            {"t":"Přihlašovací údaje po telefonu nesděluji.","leak":false,"fb":"Správně, držíte hranici i pod tlakem na čas."}
+          ]},
+          {"s":"Dobře. Teď mi nadiktujte heslo, ať účet obnovím, jinak přijdete o všechny e-maily.","opts":[
+            {"t":"Heslo je…","leak":true,"fb":"Nikdy! Legitimní správce heslo nepotřebuje – má vlastní přístup. Toto je jádro útoku."},
+            {"t":"Heslo nesděluji nikomu, ani IT.","leak":false,"fb":"Přesně tak. To je ta nejdůležitější věta celého hovoru."}
+          ]},
+          {"s":"Tak mi aspoň přečtěte ten šestimístný kód, co vám právě přišel v SMS.","opts":[
+            {"t":"Kód je 448 201.","leak":true,"fb":"Tím jste vydali druhý faktor – útočník se mohl právě přihlásit vaším jménem."},
+            {"t":"Ověřovací kód nikomu nečtu, hovor ukončuji a ověřím to u IT sám.","leak":false,"fb":"Správně. Ověřovací kód je jako heslo – patří jen vám."}
+          ]}
+        ]
+      }</script>
+    </div>
+  </div>
+  <div class="sim" data-sim="spot" id="sim-smish">
+    <div class="sim-head"><span class="badge g">Simulace</span><h3>Smishing: najdi podvod v SMS</h3></div>
+    <div class="sim-body">
+      <p class="muted">Klikáním označte v SMS všechny podezřelé prvky. Zpráva i odkaz jsou smyšlené.</p>
+      <div class="spot-host"></div>
+      <script type="application/json">{
+        "win":"Tohle je <b>smishing</b> – phishing přes SMS. Neklikat, nezadávat údaje, zprávu smazat a případně přeposlat operátorovi na číslo 7726.",
+        "items":[
+          {"t":"Česká pošta: Vaše zásilka je pozastavena.","flag":"Obecný odesílatel bez čísla zásilky a kontextu – má vzbudit zvědavost."},
+          {"t":"Doplaťte clo 29 Kč do 24 hodin, jinak bude vrácena.","flag":"Drobná částka + tlak na čas – malý obnos uspí ostražitost."},
+          {"t":"Zaplaťte zde: https://ceska-posta.celni-doplatek.info","flag":"Podezřelá doména, která jen připomíná oficiální web pošty."},
+          {"t":"Pro ověření zadejte číslo karty včetně CVC a platnosti.","flag":"Žádost o CVC a platnost karty – to legitimní dopravce nikdy nechce."}
+        ]
+      }</script>
+    </div>
+  </div>
+</section>
+
+<section class="topic" id="si-ostatni" data-ch="05" data-title="Simulace: Návnady a nátlak">
+  <div class="topic-head">
+    <h1>Návnady a nátlak: baiting, scareware, falešné kvízy</h1>
+    <p class="lead">Některé techniky nevyžadují osobní kontakt. Baiting láká na něco zdarma nebo zajímavého, scareware strašením dotlačí k instalaci hrozby a zábavné kvízy nenápadně sbírají odpovědi na bezpečnostní otázky.</p>
+  </div>
+  <div class="grid">
+    <div class="card"><span class="tag">Návnada</span><h4>Baiting</h4><p class="small">Nalezený USB disk, „film zdarma“, lákavá příloha – po připojení či stažení se spustí malware.</p></div>
+    <div class="card"><span class="tag">Strach</span><h4>Scareware</h4><p class="small">Falešné hlášení „máte 5 virů!“ a nabídka „řešení“, které je samo malware nebo podvod.</p></div>
+    <div class="card"><span class="tag">Sběr dat</span><h4>Falešné kvízy a ankety</h4><p class="small">Zábavná otázka vyláká jméno mazlíčka, rodné město – odpovědi na obnovu hesla.</p></div>
+  </div>
+  <div class="sim" data-sim="decision" id="sim-ostatni">
+    <div class="sim-head"><span class="badge g">Simulace</span><h3>Jak byste reagovali?</h3></div>
+    <div class="sim-body">
+      <p class="muted">U každé situace zvolte nejlepší reakci a porovnejte s vysvětlením.</p>
+      <script type="application/json">{"items":[
+        {"scen":"Na školním parkovišti najdete USB disk s nápisem „Maturita – zadání 2025“.","q":"Co uděláte?","opts":[
+          {"t":"Zapojím ho do počítače, ať zjistím, čí je.","v":"bad","fb":"Přesně v to baiting spoléhá – po zapojení se může spustit malware. Nalezené médium nikdy nezapojujte."},
+          {"t":"Odevzdám ho na vrátnici nebo IT a nezapojuji.","v":"good","fb":"Správně. Neznámé médium je návnada, dokud se neprokáže opak."},
+          {"t":"Otevřu ho na mobilu, tam se přece nic nestane.","v":"risky","fb":"I telefon a OTG disky lze zneužít. Neznámé médium prostě nepřipojujte k ničemu."}
+        ]},
+        {"scen":"Při prohlížení webu vyskočí hláška: „VÁŠ POČÍTAČ JE INFIKOVÁN 5 VIRY! Zavolejte podporu nebo stáhněte čištění.“","q":"Jak reagujete?","opts":[
+          {"t":"Zavřu okno/záložku, nic neinstaluji ani nevolám.","v":"good","fb":"Správně – scareware jen straší. Webová stránka nemůže opravdu prohledat váš počítač."},
+          {"t":"Stáhnu nabízený „čistič“, ať mám klid.","v":"bad","fb":"To je právě ten malware. Scareware vás strachem dotlačí k instalaci hrozby."},
+          {"t":"Zavolám na uvedené číslo podpory.","v":"bad","fb":"Falešná podpora vyláká přístup k počítači nebo platbu. Nevolat."}
+        ]},
+        {"scen":"Na sociální síti koluje kvíz: „Jak zní tvé jméno rockové hvězdy? Vezmi jméno prvního mazlíčka a ulici, kde jsi vyrůstal.“","q":"Co s tím?","opts":[
+          {"t":"Vyplním a sdílím, je to zábava.","v":"bad","fb":"Právě jste veřejně vyzradili odpovědi na typické bezpečnostní otázky (mazlíček, ulice)."},
+          {"t":"Nevyplním – jsou to odpovědi na bezpečnostní otázky.","v":"good","fb":"Správně. Zdánlivě nevinné kvízy bývají sběrem dat pro prolomení obnovy hesla."}
+        ]}
+      ]}</script>
+    </div>
+  </div>
+</section>
+
+<section class="topic" id="si-fyzicke" data-ch="05" data-title="Simulace: Fyzické techniky">
+  <div class="topic-head">
+    <h1>Fyzické sociální inženýrství</h1>
+    <p class="lead">Ne každý útok je online. Tailgating a piggybacking proniknou do budovy „na ocásek“ za oprávněnou osobou, shoulder surfing odkouká heslo přes rameno a dumpster diving hledá citlivé údaje ve vyhozených dokumentech.</p>
+  </div>
+  <div class="grid">
+    <div class="card"><span class="tag">Vstup</span><h4>Tailgating / piggybacking</h4><p class="small">Průnik do zabezpečeného prostoru za někým, kdo si otevřel kartou.</p></div>
+    <div class="card"><span class="tag">Pohled</span><h4>Shoulder surfing</h4><p class="small">Odkoukání PINu, hesla nebo kódu přes rameno při zadávání.</p></div>
+    <div class="card"><span class="tag">Odpad</span><h4>Dumpster diving</h4><p class="small">Získávání informací z vyhozených papírů a nosičů dat.</p></div>
+  </div>
+  <div class="sim" data-sim="decision" id="sim-fyzicke">
+    <div class="sim-head"><span class="badge g">Simulace</span><h3>Jak se zachovat?</h3></div>
+    <div class="sim-body">
+      <p class="muted">U každé situace zvolte nejbezpečnější reakci.</p>
+      <script type="application/json">{"items":[
+        {"scen":"U zabezpečených dveří firmy za vámi spěchá člověk s krabicemi: „Podržíte mi prosím, nemám volné ruce?“ Kartu jste u něj neviděli.","q":"Co uděláte?","opts":[
+          {"t":"Podržím, je slušné pomoct.","v":"bad","fb":"To je tailgating – nejčastější fyzický průnik. Každý se má načíst vlastní kartou."},
+          {"t":"Omluvím se a nasměruji ho na recepci, ať se prokáže.","v":"good","fb":"Správně. Zdvořile, ale důsledně – přístup řeší recepce, ne vaše karta."}
+        ]},
+        {"scen":"V tramvaji vedle vás někdo nápadně sleduje, jak odemykáte telefon a zadáváte PIN do bankovní aplikace.","q":"Nejlepší obrana?","opts":[
+          {"t":"Zakryji ruku, PIN zadávám skrytě, citlivou akci odložím.","v":"good","fb":"Správně – to je obrana proti shoulder surfingu. Používejte i biometrii."},
+          {"t":"Nevadí, stejně si to nikdo nezapamatuje.","v":"risky","fb":"PIN i krátké heslo si lze zapamatovat na jediný pohled. Zadávání zakrývejte."}
+        ]},
+        {"scen":"Firma vyhazuje do běžného koše staré výpisy, smlouvy a papír s hesly k Wi-Fi.","q":"V čem je riziko?","opts":[
+          {"t":"Dumpster diving – útočník z odpadu získá citlivé údaje.","v":"good","fb":"Správně. Citlivé dokumenty patří do skartovačky, ne do koše."},
+          {"t":"Žádné, je to jen papír na vyhození.","v":"bad","fb":"Prohrabávání odpadu (dumpster diving) je reálná technika získávání informací."}
+        ]}
+      ]}</script>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 06 BEZPEČNOST ================= -->
+<section class="topic" id="b-techniky" data-ch="06" data-title="Vrstvy zabezpečení">
+  <div class="topic-head">
+    <h1>Vrstvy zabezpečení (defense in depth)</h1>
+    <p class="lead">Žádné jediné opatření nestačí. Bezpečnost se staví jako cibule z více vrstev – když jedna selže, chrání další. Tento princip se jmenuje <b>obrana do hloubky</b>.</p>
+  </div>
+  <div class="grid">
+    <div class="card"><span class="tag">Hranice sítě</span><h4>Firewall</h4><p class="small">Filtruje provoz podle pravidel. Softwarový na zařízení, hardwarový na hranici sítě. Vlastní téma níže.</p></div>
+    <div class="card"><span class="tag">Přenos</span><h4>Šifrování komunikace</h4><p class="small">SSL/TLS pro web, VPN pro celé spojení, end-to-end v chatu.</p></div>
+    <div class="card"><span class="tag">Identita</span><h4>Silná hesla + 2FA</h4><p class="small">Dlouhé unikátní heslo ve správci a druhý faktor. Obojí má vlastní téma.</p></div>
+    <div class="card"><span class="tag">Koncové body</span><h4>Antivirus a aktualizace</h4><p class="small">Včasné záplaty zavírají známé díry, antivirus chytá známý malware.</p></div>
+    <div class="card"><span class="tag">Architektura</span><h4>Segmentace sítě</h4><p class="small">Rozdělení sítě na části – průnik do jedné neohrozí celek. IoT patří do vlastního segmentu.</p></div>
+    <div class="card"><span class="tag">Detekce</span><h4>IDS / IPS</h4><p class="small">IDS podezřelý provoz nahlásí, IPS ho rovnou zablokuje.</p></div>
+    <div class="card"><span class="tag">Bezdrát</span><h4>Zabezpečení Wi-Fi</h4><p class="small">Šifrování WPA3, silné heslo, oddělená síť pro hosty a IoT.</p></div>
+    <div class="card"><span class="tag">Data</span><h4>Zálohování</h4><p class="small">Pravidlo 3-2-1: tři kopie, dvě média, jedna mimo budovu/offline.</p></div>
+  </div>
+  <div class="callout ok"><span class="ct">Pravidlo 3-2-1 pro zálohy</span><p><b>3</b> kopie dat, na <b>2</b> různých médiích, <b>1</b> uložená mimo (offline nebo jiná lokalita). Jen offline záloha vás zachrání před ransomwarem, který síťová úložiště zašifruje také.</p></div>
+  <div class="sim" data-sim="checklist" id="sim-harden">
+    <div class="sim-head"><span class="badge g">Simulace</span><h3>Jak zabezpečené je vaše zařízení?</h3></div>
+    <div class="sim-body"><p class="muted">Zaškrtněte, co skutečně máte. Ukazatel spočítá úroveň zabezpečení.</p></div>
+    <script type="application/json">{"items":[
+      {"t":"Automatické aktualizace systému a aplikací","w":2,"tip":"Zavírá známé zranitelnosti."},
+      {"t":"Správce hesel a unikátní heslo pro každý účet","w":2},
+      {"t":"Dvoufázové ověření u důležitých účtů","w":2},
+      {"t":"Zapnutý firewall","w":1},
+      {"t":"Aktivní antivirus / ochrana v reálném čase","w":1},
+      {"t":"Pravidelná offline záloha dat","w":2},
+      {"t":"Šifrovaný disk (BitLocker / FileVault)","w":1},
+      {"t":"Zámek obrazovky a PIN/biometrie na telefonu","w":1}
+    ],"levels":[[0,"vysoké riziko – začněte hesly a zálohou"],[40,"základ máte, přidejte 2FA a zálohy"],[80,"velmi dobré, drobnosti dolaďte"],[100,"výborně zabezpečeno"]]}</script>
+  </div>
+</section>
+
+<section class="topic" id="b-firewall" data-ch="06" data-title="Simulace: Firewall">
+  <div class="topic-head">
+    <h1>Firewall</h1>
+    <p class="lead">Firewall rozhoduje o každém paketu podle seznamu pravidel, která se čtou shora dolů. První pravidlo, které sedí, rozhodne. Na konci bývá „zakázat vše ostatní“.</p>
+  </div>
+  <div class="grid">
+    <div class="card"><h4>Filtrování paketů</h4><p class="small">Rozhoduje podle IP adresy, portu a protokolu. Jednoduché a rychlé.</p></div>
+    <div class="card"><h4>Stavová kontrola</h4><p class="small">Sleduje celá spojení, pozná, co k navázané relaci patří.</p></div>
+    <div class="card"><h4>Proxy a aplikační vrstva</h4><p class="small">Kontroluje obsah konkrétních aplikací (HTTP, FTP).</p></div>
+    <div class="card"><h4>Filtrace URL/DNS</h4><p class="small">Blokuje přístup na nebezpečné domény a weby.</p></div>
+  </div>
+  <div class="sim" data-sim="firewall" id="sim-fw">
+    <div class="sim-head"><span class="badge g">Simulace</span><h3>Nastavte pravidla a pusťte provoz</h3></div>
+    <div class="sim-body">
+      <p class="muted">Upravte pravidla (čtou se shora dolů, platí první shoda) a odešlete sadu paketů. Uvidíte, které projdou a které firewall zahodí.</p>
+      <div class="tbl"><table class="fw-rules" id="fw-rules"></table></div>
+      <div class="btns" style="margin:.6rem 0 1rem"><button class="btn" id="fw-run" type="button">Pustit provoz (8 paketů)</button><button class="btn sec" id="fw-reset" type="button">Výchozí pravidla</button></div>
+      <div class="pkt-log" id="fw-log"></div>
+      <div class="result" id="fw-out" hidden></div>
+    </div>
+  </div>
+</section>
+
+<section class="topic" id="b-heslo" data-ch="06" data-title="Simulace: Síla hesla">
+  <div class="topic-head">
+    <h1>Hesla</h1>
+    <p class="lead">Dobré heslo je dlouhé, unikátní a nejde odhadnout. Délka přitom pomáhá víc než jeden vykřičník navíc – každý další znak prodlužuje čas prolomení násobně.</p>
+  </div>
+  <div class="split">
+    <div><h3>Jak heslo vymyslet</h3><ul class="list green"><li>Alespoň 12–16 znaků, ideálně <b>passphrase</b> (několik náhodných slov).</li><li>Velká i malá písmena, číslice, speciální znaky.</li><li>Žádné osobní údaje ani běžná slova.</li><li>Pro každý účet jiné heslo.</li></ul></div>
+    <div><h3>Jak heslo uchovat</h3><ul class="list green"><li><b>Správce hesel</b> (Bitwarden, 1Password, KeePass) – pamatujete si jen jedno hlavní.</li><li>Zapnout 2FA.</li><li>Neukládat hesla do nešifrovaných poznámek.</li><li>Ověřit únik na <a href="https://haveibeenpwned.com" target="_blank" rel="noopener">Have I Been Pwned</a>.</li></ul></div>
+  </div>
+  <div class="sim" data-sim="pw" id="sim-pw">
+    <div class="sim-head"><span class="badge g">Simulace</span><h3>Síla hesla a odhad doby prolomení</h3></div>
+    <div class="sim-body">
+      <p class="muted">Pište do pole (nic se nikam neodesílá) nebo zkuste příklady. Odhad počítá hrubou silu při 100 miliardách pokusů za sekundu – rychlost dnešní silné sestavy.</p>
+      <label class="lbl" for="pw-in">Vyzkoušejte heslo</label>
+      <input class="inp mono" id="pw-in" value="heslo123" autocomplete="off" spellcheck="false">
+      <div class="meter" style="height:14px;margin:.7rem 0"><span id="pw-bar"></span></div>
+      <div class="stats"><div class="stat"><b id="pw-score">—</b><small>hodnocení</small></div><div class="stat"><b id="pw-len">0</b><small>znaků</small></div><div class="stat"><b id="pw-time">—</b><small>odhad prolomení</small></div></div>
+      <div id="pw-tips" class="small muted"></div>
+      <div class="btns" style="margin-top:1rem">
+        <span class="chip" data-x="123456">123456</span>
+        <span class="chip" data-x="Leden2025">Leden2025</span>
+        <span class="chip" data-x="P@ssw0rd!">P@ssw0rd!</span>
+        <span class="chip" data-x="k7$Lм9!qZ2#vB">náhodné</span>
+        <span class="chip" data-x="správná baterie koňská svorka">4 náhodná slova</span>
+      </div>
+      <p class="small muted" style="margin-top:.8rem">Pozn.: odhad je orientační a počítá jen s hrubou silou. Běžné heslo ze slovníku padne ve skutečnosti mnohem dřív – útočník zkouší známá hesla jako první.</p>
+    </div>
+  </div>
+</section>
+
+<section class="topic" id="b-2fa" data-ch="06" data-title="Simulace: 2FA">
+  <div class="topic-head">
+    <h1>Dvoufázové ověření (2FA)</h1>
+    <p class="lead">Druhý faktor přidává k heslu další, nezávislý důkaz identity. I když útočník heslo získá, bez druhého faktoru se nepřihlásí.</p>
+  </div>
+  <div class="tbl"><table>
+    <thead><tr><th>Metoda</th><th>Jak funguje</th><th>Bezpečnost</th></tr></thead>
+    <tbody>
+      <tr><td>Autentizační aplikace (TOTP)</td><td>Časově omezený kód z aplikace (Authy, Google/Microsoft Authenticator)</td><td><span class="badge g">vysoká</span></td></tr>
+      <tr><td>Fyzický klíč (FIDO2)</td><td>USB/NFC klíč (YubiKey, Titan)</td><td><span class="badge g">nejvyšší</span></td></tr>
+      <tr><td>SMS kód</td><td>Kód přijde zprávou</td><td><span class="badge y">nižší (SIM swap)</span></td></tr>
+      <tr><td>E-mail kód</td><td>Kód do schránky</td><td><span class="badge y">nižší</span></td></tr>
+      <tr><td>Biometrie</td><td>Otisk, obličej</td><td><span class="badge g">vysoká + pohodlná</span></td></tr>
+    </tbody></table></div>
+  <div class="sim" data-sim="totp" id="sim-totp">
+    <div class="sim-head"><span class="badge g">Simulace</span><h3>Jak vzniká kód v autentizační aplikaci</h3></div>
+    <div class="sim-body">
+      <p class="muted">Aplikace a server sdílejí tajný klíč. Z něj a z aktuálního času obě strany spočítají stejný šestimístný kód (TOTP). Kód se mění po 30 sekundách. Zde běží zjednodušený model.</p>
+      <div class="split">
+        <div style="display:flex;align-items:center;gap:1.2rem;flex-wrap:wrap">
+          <svg class="ring" viewBox="0 0 36 36" aria-hidden="true"><circle cx="18" cy="18" r="15.9" fill="none" stroke="rgba(255,255,255,.12)" stroke-width="3"/><circle id="totp-ring" cx="18" cy="18" r="15.9" fill="none" stroke="var(--y1)" stroke-width="3" stroke-dasharray="100 100" stroke-linecap="round" transform="rotate(-90 18 18)"/></svg>
+          <div><div class="totp-code" id="totp-code" aria-live="off">000 000</div><div class="small muted">platí ještě <span id="totp-sec">30</span> s</div></div>
+        </div>
+        <div>
+          <label class="lbl" for="totp-in">Přihlášení – zadejte aktuální kód</label>
+          <div class="row"><div class="field"><input class="inp mono" id="totp-in" inputmode="numeric" placeholder="123456" maxlength="7"></div><button class="btn" id="totp-go" type="button">Ověřit</button></div>
+          <div class="result" id="totp-out" hidden></div>
+          <p class="small muted" style="margin-top:.8rem">Klíč je jen v tomto okně. Zkuste kód zadat těsně před vypršením – uvidíte, proč staré kódy neplatí.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="topic" id="b-vpntor" data-ch="06" data-title="Simulace: VPN a TOR">
+  <div class="topic-head">
+    <h1>VPN a síť TOR</h1>
+    <p class="lead">Obě technologie skrývají vaši IP adresu, ale jinak a za jiným účelem. VPN je rychlý šifrovaný tunel k jednomu serveru; TOR posílá data přes tři uzly kvůli maximální anonymitě.</p>
+  </div>
+  <div class="split">
+    <div><h3>VPN</h3><p class="small">Šifrovaný tunel mezi vaším zařízením a serverem poskytovatele. Server vystupuje za vás, váš poskytovatel internetu vidí jen šifrovaný provoz.</p>
+      <ul class="list blue"><li>Rychlá, vhodná pro běžné použití i streaming.</li><li>Chrání na veřejné Wi-Fi.</li><li>Poskytovatel VPN ale vidí váš provoz – důležité jsou zásady <b>no-logs</b>.</li></ul>
+      <p class="small muted">Protokoly: OpenVPN, WireGuard, IKEv2. Šifra AES-256 nebo ChaCha20.</p></div>
+    <div><h3>TOR (The Onion Router)</h3><p class="small">Data jdou přes tři náhodné uzly, každý zná jen souseda. Žádný jediný uzel nezná zdroj i cíl zároveň.</p>
+      <ul class="list green"><li>Vstupní uzel zná vás, ne cíl. Výstupní zná cíl, ne vás.</li><li>Nejvyšší anonymita, zato pomalejší.</li><li>Přístup ke službám <code>.onion</code>.</li><li>Výstupní uzel nešifruje – nutné HTTPS.</li></ul></div>
+  </div>
+  <div class="sim" data-sim="route" id="sim-route">
+    <div class="sim-head"><span class="badge g">Simulace</span><h3>Co o vás vidí jednotlivé body na cestě</h3></div>
+    <div class="sim-body">
+      <p class="muted">Vyberte režim a nechte paket projít. U každého bodu se ukáže, co o spojení ví. Všimněte si, kde je vaše IP vidět a kde ne.</p>
+      <div class="btns"><button class="btn" data-mode="none" type="button">Bez ochrany</button><button class="btn" data-mode="vpn" type="button">Přes VPN</button><button class="btn" data-mode="tor" type="button">Přes TOR</button></div>
+      <div id="route-onion"></div>
+      <div class="route" id="route-hops"></div>
+      <div class="result" id="route-out"></div>
+    </div>
+  </div>
+  <div class="callout"><span class="ct">Kdy co</span><p><b>VPN</b> pro rychlost, bezpečnou Wi-Fi a geografické odblokování. <b>TOR</b> pro maximální anonymitu a obcházení cenzury. Kombinace obojího je možná, ale ještě pomalejší.</p></div>
+</section>
+
+<section class="topic" id="b-zdravi" data-ch="06" data-title="Digitální well-being">
+  <div class="topic-head">
+    <h1>Péče o duševní zdraví v online světě</h1>
+    <p class="lead">Bezpečnost není jen o technice. Přemíra informací, tlak sociálních sítí a kyberšikana zatěžují psychiku. Zdravé hranice jsou součástí digitální hygieny.</p>
+  </div>
+  <div class="grid">
+    <div class="card"><h4>Digitální hranice</h4><p class="small">Omezte čas u obrazovky, stanovte zóny bez telefonu (jídlo, ložnice).</p></div>
+    <div class="card"><h4>Zdravý vztah k sítím</h4><p class="small">Sledujte, co vás obohacuje. Příspěvky ukazují ideál, ne realitu.</p></div>
+    <div class="card"><h4>Proti kyberšikaně</h4><p class="small">Blokujte a nahlaste útočníky, uchovejte důkazy, svěřte se.</p></div>
+    <div class="card"><h4>Pravidlo 20-20-20</h4><p class="small">Každých 20 minut se na 20 sekund podívejte do dálky (asi 20 stop ≈ 6 metrů). Uleví očím.</p></div>
+    <div class="card"><h4>Spánek</h4><p class="small">Zařízení vypněte hodinu před spaním, modré světlo ruší usínání.</p></div>
+    <div class="card"><h4>Mindfulness</h4><p class="small">Vědomá pozornost na přítomnost snižuje stres z přetížení.</p></div>
+  </div>
+  <div class="callout fix"><span class="ct">Oprava v podkladech</span><p>Pravidlo <b>20-20-20</b> znamená dívat se do vzdálenosti <b>20 stop</b> (přibližně 6 metrů), ne 20 metrů. Jde o americké oční doporučení – 20 stop je vzdálenost, na kterou se oko uvolní.</p></div>
+  <div class="callout"><span class="ct">Když je toho moc</span><p>Při dlouhodobém stresu, úzkosti nebo po kyberšikaně vyhledejte pomoc dospělého, kterému důvěřujete, školního psychologa nebo linku pomoci. Mluvit o tom je síla, ne slabost.</p></div>
+</section>
+
+<!-- ================= 07 ŠIFROVÁNÍ ================= -->
+<section class="topic" id="s-principy" data-ch="07" data-title="Principy šifrování">
+  <div class="topic-head">
+    <h1>Principy šifrování</h1>
+    <p class="lead">Šifrování převádí čitelný text (plaintext) na nečitelný (ciphertext), který vrátí jen držitel správného klíče. Chrání hlavně <b>důvěrnost</b> dat.</p>
+  </div>
+  <div class="split">
+    <div class="card"><span class="tag">Jeden klíč</span><h3>Symetrické šifrování</h3><p>Stejný klíč šifruje i dešifruje. Rychlé, vhodné pro velké objemy dat. Problém: jak klíč bezpečně předat druhé straně.</p><p class="small muted">AES, ChaCha20, 3DES, Blowfish.</p></div>
+    <div class="card"><span class="tag">Dvojice klíčů</span><h3>Asymetrické šifrování</h3><p>Veřejný klíč šifruje, soukromý dešifruje. Soukromý nikdy neopustí majitele. Pomalejší, ideální pro výměnu klíčů a digitální podpisy.</p><p class="small muted">RSA, ECC (eliptické křivky).</p></div>
+  </div>
+  <div class="callout ok"><span class="ct">Jak se to používá v praxi</span><p>HTTPS i Signal kombinují obojí: <b>asymetrickým</b> šifrováním si strany bezpečně vymění jednorázový <b>symetrický</b> klíč a tím pak rychle šifrují samotnou komunikaci. Nejlepší z obou světů.</p></div>
+  <div class="tbl"><table>
+    <thead><tr><th>Algoritmus</th><th>Typ</th><th>Použití</th><th>Poznámka</th></tr></thead>
+    <tbody>
+      <tr><td><b>AES</b></td><td>Symetrický</td><td>Disky, VPN, Wi-Fi</td><td>Standard, klíče 128–256 bitů</td></tr>
+      <tr><td><b>ChaCha20</b></td><td>Symetrický</td><td>Mobilní zařízení, TLS 1.3</td><td>Rychlý bez HW akcelerace</td></tr>
+      <tr><td><b>RSA</b></td><td>Asymetrický</td><td>Podpisy, výměna klíčů</td><td>Klíče 2048–4096 bitů</td></tr>
+      <tr><td><b>ECC</b></td><td>Asymetrický</td><td>Mobily, IoT</td><td>Kratší klíč, stejná síla</td></tr>
+      <tr><td><s>3DES, Blowfish</s></td><td>Symetrický</td><td>Historické</td><td>Dnes už se nedoporučují</td></tr>
+    </tbody></table></div>
+  <div class="sim" data-sim="caesar" id="sim-caesar">
+    <div class="sim-head"><span class="badge g">Simulace</span><h3>Caesarova šifra a proč je slabá</h3></div>
+    <div class="sim-body">
+      <p class="muted">Caesarova šifra posune každé písmeno o pevný počet míst. Zašifrujte si zprávu, pak zkuste šifru prolomit frekvenční analýzou – bez znalosti klíče.</p>
+      <div class="row">
+        <div class="field" style="flex-basis:100%"><label class="lbl" for="cae-in">Text</label><input class="inp mono" id="cae-in" value="KYBERNETICKA BEZPECNOST"></div>
+        <div class="field" style="flex:0 0 160px"><label class="lbl" for="cae-k">Posun: <span id="cae-kv">3</span></label><input type="range" id="cae-k" min="1" max="25" value="3"></div>
+      </div>
+      <h4 style="margin-top:1rem">Zašifrováno</h4>
+      <div class="out mono" id="cae-out"></div>
+      <hr>
+      <h4>Prolomení útočníkem (zná jen šifrový text)</h4>
+      <p class="small muted">Útočník nezná klíč, ale ví, že v češtině je nejčastější „E“ a „A“. Frekvenční analýza ukáže, o kolik nejspíš posunout zpět.</p>
+      <div class="btns"><button class="btn" id="cae-crack" type="button">Spustit frekvenční analýzu</button></div>
+      <div class="freq-wrap"><div class="freq" id="cae-freq" aria-hidden="true"></div></div>
+      <div class="result" id="cae-res" hidden></div>
+    </div>
+  </div>
+</section>
+
+<section class="topic" id="s-hash" data-ch="07" data-title="Simulace: Hashování">
+  <div class="topic-head">
+    <h1>Hashování</h1>
+    <p class="lead">Hash je „otisk“ dat o pevné délce. Z hashe nejde získat původní data zpět a i nepatrná změna vstupu vytvoří úplně jiný výstup. Proto se hesla ukládají hashovaná, ne v čitelné podobě.</p>
+  </div>
+  <div class="grid">
+    <div class="card"><h4>Jednosměrné</h4><p class="small">Z hashe se původní text prakticky nedá spočítat zpět.</p></div>
+    <div class="card"><h4>Deterministické</h4><p class="small">Stejný vstup dá vždy stejný hash – jde tak porovnávat.</p></div>
+    <div class="card"><h4>Lavinový efekt</h4><p class="small">Změna jednoho znaku zcela změní výstup.</p></div>
+    <div class="card"><h4>Odolné vůči kolizím</h4><p class="small">Dva různé vstupy by neměly dát stejný hash.</p></div>
+  </div>
+  <div class="tbl"><table>
+    <thead><tr><th>Algoritmus</th><th>Délka</th><th>Stav</th></tr></thead>
+    <tbody>
+      <tr><td>MD5</td><td>128 bitů</td><td><span class="badge r">prolomený</span></td></tr>
+      <tr><td>SHA-1</td><td>160 bitů</td><td><span class="badge r">zastaralý</span></td></tr>
+      <tr><td>SHA-256</td><td>256 bitů</td><td><span class="badge g">doporučený</span></td></tr>
+      <tr><td>SHA-3, BLAKE2</td><td>variabilní</td><td><span class="badge g">moderní</span></td></tr>
+    </tbody></table></div>
+  <div class="sim" data-sim="hash" id="sim-hash">
+    <div class="sim-head"><span class="badge g">Simulace</span><h3>Lavinový efekt a sůl</h3></div>
+    <div class="sim-body">
+      <p class="muted">Pište text a sledujte hash. Změňte jediný znak – výstup se úplně změní. Pak zapněte „sůl“ a uvidíte, proč s ní nepomůže ani předpočítaná tabulka (rainbow table). Použitý hash je demonstrační (FNV), ne kryptografický.</p>
+      <div class="row">
+        <div class="field" style="flex-basis:100%"><label class="lbl" for="hash-in">Vstup (např. heslo)</label><input class="inp mono" id="hash-in" value="Heslo123"></div>
+      </div>
+      <label class="chk" style="margin:.5rem 0"><input type="checkbox" id="hash-salt"><span>Přidat náhodnou sůl (salt) před hashováním</span></label>
+      <div class="kv" style="margin-top:.5rem">
+        <dt>vstup + sůl</dt><dd class="mono" id="hash-src" style="word-break:break-all"></dd>
+        <dt>hash</dt><dd class="mono" id="hash-out" style="word-break:break-all;color:var(--y2)"></dd>
+      </div>
+      <div class="callout" style="margin-top:1rem"><span class="ct">Rainbow table</span><p>Útočník má předpočítanou tabulku hash → heslo. Bez soli najde běžné heslo okamžitě. <b>Sůl</b> (náhodný přívěsek ke každému heslu) tabulku znehodnotí, protože pro každý účet vznikne jiný hash. Reálně se používá navíc pomalé hashování (bcrypt, Argon2).</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="topic" id="s-krypto" data-ch="07" data-title="Kryptoanalýza">
+  <div class="topic-head">
+    <h1>Kryptoanalýza</h1>
+    <p class="lead">Kryptoanalýza hledá způsoby, jak šifru prolomit bez znalosti klíče. Zná-li obránce tyto metody, umí šifrování nasadit tak, aby obstálo.</p>
+  </div>
+  <div class="grid two">
+    <div class="card"><h4>Útok hrubou silou</h4><p class="small">Vyzkoušení všech klíčů. Brání se délkou klíče – každý bit zdvojnásobí počet možností.</p></div>
+    <div class="card"><h4>Frekvenční analýza</h4><p class="small">Statistika výskytu písmen. Láme jednoduché substituční šifry (Caesar). Moderní šifry jí odolají.</p></div>
+    <div class="card"><h4>Útok se známým/zvoleným textem</h4><p class="small">Útočník zná část textu nebo si zvolí, co se zašifruje, a odvozuje klíč.</p></div>
+    <div class="card"><h4>Útok na implementaci</h4><p class="small">Nemíří na matematiku, ale na chyby v kódu – slabé generování náhody, časování operací (timing attack).</p></div>
+    <div class="card"><h4>Útok na protokol</h4><p class="small">Zneužití slabiny v protokolu, ne v šifře samotné (např. Heartbleed v TLS).</p></div>
+    <div class="card"><h4>Rainbow tables</h4><p class="small">Předpočítané tabulky pro reverz hashů. Obrana: sůl a pomalé hashování.</p></div>
+  </div>
+  <div class="callout"><span class="ct">Zlaté pravidlo kryptografie</span><p>Nevymýšlejte vlastní šifru. Spolehlivé jsou jen algoritmy, které roky zkoušela lámat celá odborná komunita (AES, RSA, SHA-256). „Bezpečnost skrze utajení“ algoritmu je slabina, ne obrana.</p></div>
+  <div class="callout warn"><span class="ct">Pohled do budoucna</span><p>Kvantové počítače mohou ohrozit dnešní asymetrické šifry (RSA, ECC) – viz Shorův algoritmus v kapitole Úlohy. Proto se vyvíjí <b>post-kvantová kryptografie</b>.</p></div>
+  <div class="sim" data-sim="quiz" id="sim-crypto">
+    <div class="sim-head"><span class="badge b">Procvičení</span><h3>Šifrování v kostce</h3></div>
+    <div class="sim-body"></div>
+    <script type="application/json">[
+      {"q":"Čím se liší symetrické a asymetrické šifrování?","a":["Rychlostí procesoru","Symetrické má jeden klíč, asymetrické dvojici veřejný + soukromý","Asymetrické nelze dešifrovat","Není rozdíl"],"c":1,"e":"Symetrické: jeden sdílený klíč. Asymetrické: veřejný šifruje, soukromý dešifruje."},
+      {"q":"Proč se hesla ukládají hashovaná a ne v čitelné podobě?","a":["Zabere to méně místa","Při úniku databáze útočník nezíská přímo hesla","Zrychlí to přihlášení","Kvůli zákonu"],"c":1,"e":"Z hashe se heslo nedá jednoduše získat zpět."},
+      {"q":"K čemu slouží sůl (salt)?","a":["Zpomalí internet","Znehodnotí předpočítané tabulky hashů (rainbow tables)","Nahradí heslo","Šifruje disk"],"c":1,"e":"Náhodná sůl u každého hesla způsobí jiný hash, takže univerzální tabulka nepomůže."},
+      {"q":"Který hash už je považovaný za nebezpečný?","a":["SHA-256","SHA-3","MD5","BLAKE2"],"c":2,"e":"MD5 (a také SHA-1) jsou prolomené kvůli kolizím."}
+    ]</script>
+  </div>
+</section>
+
+<!-- ================= 08 INTERNET ================= -->
+<section class="topic" id="i-uvod" data-ch="08" data-title="Internet vs. kyberprostor">
+  <div class="topic-head">
+    <h1>Internet a kybernetický prostor</h1>
+    <p class="lead">Dva pojmy, které se často pletou. Internet je technická síť; kyberprostor je svět, který na ní žije.</p>
+  </div>
+  <div class="split">
+    <div class="card"><span class="tag">Infrastruktura</span><h3>Internet</h3><p>Globální síť propojených zařízení komunikujících standardními protokoly (TCP/IP). Tvoří ji kabely, servery, routery a software. Je to „dopravní síť“.</p></div>
+    <div class="card"><span class="tag">Prostředí</span><h3>Kybernetický prostor</h3><p>Abstraktní prostředí dat, služeb a virtuálních interakcí nad internetem i mimo něj (firemní sítě, cloud, chytrá zařízení). Je to „svět“, který po té síti jezdí.</p></div>
+  </div>
+  <div class="callout"><span class="ct">Jednou větou</span><p>Internet je silniční síť, kybernetický prostor je doprava, zboží a lidé, kteří po ní jezdí.</p></div>
+</section>
+
+<section class="topic" id="i-blockchain" data-ch="08" data-title="Simulace: Blockchain">
+  <div class="topic-head">
+    <h1>Blockchain</h1>
+    <p class="lead">Blockchain je řetěz bloků, kde každý blok obsahuje hash toho předchozího. Změníte-li jeden blok, rozbijí se všechny následující – proto je tak těžké data zpětně zfalšovat.</p>
+  </div>
+  <div class="grid">
+    <div class="card"><h4>Decentralizace</h4><p class="small">Žádná centrální autorita, data drží mnoho uzlů.</p></div>
+    <div class="card"><h4>Řetězení přes hash</h4><p class="small">Každý blok nese hash předchozího → nezměnitelnost.</p></div>
+    <div class="card"><h4>Konsenzus</h4><p class="small">Proof of Work (těžba) nebo Proof of Stake ověří nový blok.</p></div>
+    <div class="card"><h4>Využití</h4><p class="small">Kryptoměny, smart kontrakty, dodavatelské řetězce, digitální identita.</p></div>
+  </div>
+  <div class="sim" data-sim="chain" id="sim-chain">
+    <div class="sim-head"><span class="badge g">Simulace</span><h3>Vyzkoušejte nezměnitelnost řetězu</h3></div>
+    <div class="sim-body">
+      <p class="muted">Upravte data v kterémkoli bloku. Všechny bloky od něj dál okamžitě zčervenají – jejich hash už nesedí. „Těžbou“ (přepočtem) je zase opravíte. Hash je zde demonstrační.</p>
+      <div class="blocks" id="chain-blocks"></div>
+      <div class="btns" style="margin-top:1rem"><button class="btn" id="chain-mine" type="button">Přepočítat (vytěžit) řetěz</button><button class="btn sec" id="chain-reset" type="button">Reset</button></div>
+      <div class="result" id="chain-out"></div>
+    </div>
+  </div>
+</section>
+
+<section class="topic" id="i-iot" data-ch="08" data-title="IoT – chytrá zařízení">
+  <div class="topic-head">
+    <h1>IoT – Internet věcí</h1>
+    <p class="lead">Chytrá zařízení usnadňují život, ale každé připojené zařízení je i vstupní branou. Slabě zabezpečená kamera nebo žárovka se může stát součástí botnetu.</p>
+  </div>
+  <div class="grid">
+    <div class="card"><span class="tag">Domácnost</span><h4>Smart Home</h4><p class="small">Osvětlení, termostaty, zámky, zásuvky, reproduktory, kamery.</p></div>
+    <div class="card"><span class="tag">Zdraví</span><h4>Wearables</h4><p class="small">Náramky, chytré hodinky, glukometry.</p></div>
+    <div class="card"><span class="tag">Doprava</span><h4>Smart Cars</h4><p class="small">Asistenti řízení, autonomní prvky, vzdálené ovládání.</p></div>
+    <div class="card"><span class="tag">Města</span><h4>Smart Cities</h4><p class="small">Chytré osvětlení, parkování, měřiče energie.</p></div>
+    <div class="card"><span class="tag">Průmysl</span><h4>IIoT</h4><p class="small">Senzory strojů, výrobní linky, sklady.</p></div>
+    <div class="card"><span class="tag">Zemědělství</span><h4>Agri-Tech</h4><p class="small">Chytré zavlažování, drony, půdní senzory.</p></div>
+  </div>
+  <h2>Komunikační protokoly IoT</h2>
+  <div class="tbl"><table>
+    <thead><tr><th>Protokol</th><th>Vlastnost</th><th>Typické použití</th></tr></thead>
+    <tbody>
+      <tr><td>MQTT</td><td>Lehký, publish/subscribe</td><td>Senzory v reálném čase</td></tr>
+      <tr><td>CoAP</td><td>Nad UDP, pro slabá zařízení</td><td>Úsporná zařízení</td></tr>
+      <tr><td>Zigbee / Z-Wave</td><td>Bezdrát, nízká spotřeba, mesh</td><td>Chytrá domácnost</td></tr>
+      <tr><td>BLE</td><td>Bluetooth s nízkou spotřebou</td><td>Wearables</td></tr>
+      <tr><td>LoRaWAN</td><td>Dlouhý dosah, malá data</td><td>Měřiče, zemědělství</td></tr>
+    </tbody></table></div>
+  <div class="callout warn"><span class="ct">Bezpečnost IoT</span><p>Změňte výchozí hesla, aktualizujte firmware, zařaďte IoT do <b>oddělené sítě</b> a vypínejte funkce, které nepoužíváte. Botnet Mirai (2016) vznikl právě z kamer a routerů s továrním heslem.</p></div>
+</section>
+
+<section class="topic" id="i-darknet" data-ch="08" data-title="Darknet a deep web">
+  <div class="topic-head">
+    <h1>Deep web a darknet</h1>
+    <p class="lead">Běžné vyhledávače vidí jen zlomek webu. Většina obsahu je „pod hladinou“ – a je na tom často zcela legální.</p>
+  </div>
+  <div class="webdepth" id="web-depth">
+    <div style="background:rgba(65,215,255,.18)"><h4>Surface web</h4><p class="small" style="margin:0">Veřejné, indexované stránky – to, co najde Google. Jen malá část celku.</p></div>
+    <div style="background:rgba(65,215,255,.1)"><h4>Deep web</h4><p class="small" style="margin:0">Obsah za přihlášením nebo neindexovaný: internetové bankovnictví, e-maily, firemní systémy, databáze. <b>Zcela běžné a legální.</b></p></div>
+    <div style="background:rgba(239,68,68,.14)"><h4>Darknet</h4><p class="small" style="margin:0">Část deep webu dostupná jen přes zvláštní software (Tor, I2P), adresy <code>.onion</code>. Slouží k anonymitě – legitimně (novináři, aktivisté) i nelegálně (černé trhy).</p></div>
+  </div>
+  <div class="callout"><span class="ct">Legitimní využití</span><p>Darknet není synonymum pro zločin. Používají ho novináři, oznamovatelé a lidé v represivních režimech k bezpečné, anonymní komunikaci. Zároveň tam ale fungují i nelegální tržiště – proto je obtížné ho hlídat.</p></div>
+  <div class="callout warn"><span class="ct">Pozor</span><p>Anonymita neznamená bezpečí. Na darknetu je vysoká koncentrace podvodů, malwaru a phishingu. Pro běžného uživatele tam není důvod chodit.</p></div>
+</section>
+
+<section class="topic" id="i-ai" data-ch="08" data-title="Umělá inteligence">
+  <div class="topic-head">
+    <h1>Umělá inteligence</h1>
+    <p class="lead">AI je dnes nástroj obránců i útočníků. Pomáhá odhalovat hrozby, ale také zrychluje a zlevňuje útoky. Rozumět principům AI patří k digitální gramotnosti.</p>
+  </div>
+  <h2>Jak se AI učí</h2>
+  <p>AI stojí na třech pilířích: <b>data</b> (z čeho se učí), <b>algoritmy</b> (strojové a hluboké učení) a <b>výpočetní výkon</b>. Model se trénuje na datech, ověřuje na nových a pak se nasadí.</p>
+  <h2>Typy AI</h2>
+  <div class="grid">
+    <div class="card"><h4>Podle schopností</h4><p class="small"><b>Úzká</b> AI řeší konkrétní úkol (dnešek). <b>Obecná</b> AI by zvládla cokoli jako člověk (zatím neexistuje). <b>Superinteligence</b> je hypotetická.</p></div>
+    <div class="card"><h4>Konverzační</h4><p class="small">Chatboti a hlasoví asistenti.</p></div>
+    <div class="card"><h4>Generativní</h4><p class="small">Tvoří text, obrázky, zvuk, video.</p></div>
+    <div class="card"><h4>Analytická</h4><p class="small">Predikce, detekce podvodů, analýza dat.</p></div>
+  </div>
+  <h2>AI a kybernetická bezpečnost</h2>
+  <div class="split">
+    <div><h3 style="color:var(--danger-soft)">Hrozby</h3><ul class="list"><li>Automatizovaný a přesvědčivější phishing.</li><li><b>Deepfake</b> – falešná videa a hlasy k podvodům a manipulaci.</li><li>Masové dezinformace.</li><li>Otrávení trénovacích dat, adversariální útoky.</li><li>Kyberzločin jako služba – snazší vstup pro méně zdatné útočníky.</li></ul></div>
+    <div><h3 style="color:var(--g2)">Obrana</h3><ul class="list green"><li>Detekce anomálií v provozu v reálném čase.</li><li>Rychlejší odhalení nových hrozeb.</li><li>Automatizace reakce na incidenty.</li><li>Lepší antispam a antivirové filtry.</li></ul></div>
+  </div>
+  <div class="callout"><span class="ct">Zdravý rozum</span><p>AI je mocný nástroj, ale dělá chyby a lze ji zmanipulovat. U citlivých rozhodnutí musí zůstat člověk „ve smyčce“. A pozor na deepfake – ověřujte zdroj, než zprávě uvěříte.</p></div>
+  <div class="sim" data-sim="quiz" id="sim-ai">
+    <div class="sim-head"><span class="badge b">Procvičení</span><h3>AI a bezpečnost</h3></div>
+    <div class="sim-body"></div>
+    <script type="application/json">[
+      {"q":"Co je deepfake?","a":["Hluboká záloha dat","Realistické falešné video/audio vytvořené AI","Typ firewallu","Šifrovací algoritmus"],"c":1,"e":"Deepfake napodobí skutečnou osobu – nástroj k podvodům a dezinformacím."},
+      {"q":"Existuje dnes obecná AI (schopná čehokoli jako člověk)?","a":["Ano, běžně","Ne, zatím jen úzká AI pro konkrétní úkoly","Ano, ale jen v Číně","Ne, AI neexistuje"],"c":1,"e":"Dnešní systémy jsou úzká AI. Obecná AI zůstává zatím teoretická."},
+      {"q":"Jak AI pomáhá obráncům?","a":["Nijak","Detekcí anomálií a rychlejším odhalením hrozeb","Jen psaním e-mailů","Zpomalením sítě"],"c":1,"e":"AI umí v reálném čase najít podezřelé vzory, které by člověk přehlédl."}
+    ]</script>
+  </div>
+</section>
+
+<!-- ================= 50 LEGISLATIVA ================= -->
+<section class="topic" id="l-uvod" data-ch="50" data-title="Přehled legislativy">
+  <div class="topic-head">
+    <h1>Legislativa kybernetické bezpečnosti</h1>
+    <p class="lead">Pravidla hry stanovují zákony a nařízení – české i evropské. Určují, kdo musí své systémy chránit, jak hlásit incidenty a co hrozí za jejich porušení.</p>
+  </div>
+  <div class="callout fix"><span class="ct">Zásadní aktualizace (2025)</span>
+    <p>Původní podklady vycházely ze zákona <b>č. 181/2014 Sb.</b> Ten byl od <b>1. listopadu 2025</b> nahrazen novým <b>zákonem č. 264/2025 Sb., o kybernetické bezpečnosti</b>, který do českého práva promítá evropskou směrnici <b>NIS2</b>. Níže už pracujeme s aktuálním stavem.</p>
+  </div>
+  <div class="grid two">
+    <div class="card"><span class="tag">ČR</span><h3>Zákon č. 264/2025 Sb.</h3><p class="small">Nový zákon o kybernetické bezpečnosti účinný od 1. 11. 2025. Zavádí systém <b>regulovaných služeb</b> a dva režimy povinností. Dozoruje NÚKIB.</p></div>
+    <div class="card"><span class="tag">EU</span><h3>GDPR</h3><p class="small">Nařízení o ochraně osobních údajů, účinné od 25. 5. 2018. Práva subjektů a povinnosti správců dat.</p></div>
+    <div class="card"><span class="tag">EU</span><h3>Směrnice NIS2</h3><p class="small">Z prosince 2022, nahrazuje NIS z roku 2016. Rozšiřuje okruh regulovaných sektorů a zpřísňuje povinnosti.</p></div>
+    <div class="card"><span class="tag">ČR</span><h3>Trestní zákoník (40/2009 Sb.)</h3><p class="small">Postihuje kybernetickou kriminalitu – neoprávněný přístup, poškození dat, podvod.</p></div>
+  </div>
+  <div class="callout fix"><span class="ct">Další opravy dat</span>
+    <p>Směrnice <b>NIS2</b> byla přijata v <b>prosinci 2022</b> (ne 2020). Původní zákon o ochraně osobních údajů byl <b>č. 101/2000 Sb.</b>; dnes platí GDPR a doprovodný <b>zákon č. 110/2019 Sb.</b></p>
+  </div>
+</section>
+
+<section class="topic" id="l-gdpr" data-ch="50" data-title="GDPR">
+  <div class="topic-head">
+    <h1>GDPR – ochrana osobních údajů</h1>
+    <p class="lead">GDPR dává lidem kontrolu nad jejich osobními údaji a firmám jasné povinnosti. Platí pro každého, kdo zpracovává údaje lidí v EU – bez ohledu na to, kde sídlí.</p>
+  </div>
+  <h2>Klíčové zásady</h2>
+  <ul class="list green">
+    <li><b>Zákonnost, korektnost, transparentnost</b> – člověk ví, jak se s jeho údaji nakládá.</li>
+    <li><b>Účelové omezení</b> – údaje jen pro jasně daný účel.</li>
+    <li><b>Minimalizace</b> – jen nezbytně nutné údaje.</li>
+    <li><b>Přesnost</b> a <b>omezené uchovávání</b> – aktuální data, ne déle než je třeba.</li>
+    <li><b>Integrita a důvěrnost</b> – bezpečné zpracování.</li>
+    <li><b>Odpovědnost</b> – správce musí soulad doložit.</li>
+  </ul>
+  <h2>Práva subjektu údajů</h2>
+  <div class="grid">
+    <div class="card"><h4>Přístup</h4><p class="small">Vědět, jaké údaje o mně kdo má.</p></div>
+    <div class="card"><h4>Oprava</h4><p class="small">Opravit nepřesné údaje.</p></div>
+    <div class="card"><h4>Výmaz</h4><p class="small">„Právo být zapomenut.“</p></div>
+    <div class="card"><h4>Omezení a námitka</h4><p class="small">Omezit zpracování, vznést námitku (např. proti marketingu).</p></div>
+    <div class="card"><h4>Přenositelnost</h4><p class="small">Získat údaje a vzít je ke konkurenci.</p></div>
+    <div class="card"><h4>Proti profilování</h4><p class="small">Nebýt předmětem čistě automatizovaného rozhodnutí.</p></div>
+  </div>
+  <div class="callout warn"><span class="ct">Pokuty</span><p>Až <b>20 milionů eur</b>, nebo <b>4 % celosvětového ročního obratu</b> – podle toho, co je vyšší.</p></div>
+  <h2>GDPR a cookies</h2>
+  <p>Cookies, které mohou identifikovat uživatele (analytické, reklamní), jsou osobní údaje. Web k nim potřebuje <b>informovaný souhlas</b> daný <b>předem</b>. Nezbytné technické cookies souhlas nevyžadují. Odmítnutí musí být stejně snadné jako souhlas – tím se budeme zabývat v simulaci etiky.</p>
+</section>
+
+<section class="topic" id="l-nis2" data-ch="50" data-title="NIS2 a zákon o KB">
+  <div class="topic-head">
+    <h1>NIS2 a nový zákon o kybernetické bezpečnosti</h1>
+    <p class="lead">Směrnice NIS2 sjednocuje kybernetickou bezpečnost napříč EU. Česko ji provádí zákonem č. 264/2025 Sb., který zásadně rozšiřuje okruh povinných organizací.</p>
+  </div>
+  <div class="split">
+    <div><h3>Co přináší NIS2 / zákon 264/2025</h3><ul class="list blue">
+      <li>Rozšíření na mnohem více sektorů (energetika, doprava, zdravotnictví, digitální služby, veřejná správa…).</li>
+      <li>Systém <b>regulovaných služeb</b> a dva <b>režimy povinností</b> – vyšší (vyhláška 409/2025 Sb.) a nižší (vyhláška 410/2025 Sb.).</li>
+      <li><b>Samoidentifikace</b> – organizace si sama určí, zda spadá pod zákon, a ohlásí se NÚKIB.</li>
+      <li>Povinné <b>hlášení incidentů</b> a bezpečnostní opatření.</li>
+      <li>Důraz na <b>dodavatelský řetězec</b> – odpovědnost i za bezpečnost dodavatelů.</li>
+      <li>Vyšší <b>odpovědnost vedení</b> a sankce.</li>
+    </ul></div>
+    <div><h3>Lhůty a režim</h3>
+      <div class="kv">
+        <dt>Účinnost</dt><dd>1. 11. 2025</dd>
+        <dt>Samoidentifikace</dt><dd>ohlásit do 60 dnů od splnění podmínek</dd>
+        <dt>Dozor</dt><dd>NÚKIB</dd>
+        <dt>Předchůdce</dt><dd>zákon 181/2014 Sb. (zrušen)</dd>
+      </div>
+      <div class="callout" style="margin-top:1rem"><span class="ct">Praktická pomůcka</span><p>NÚKIB zveřejnil <a href="https://portal.nukib.gov.cz" target="_blank" rel="noopener">portál a kalkulačku</a>, kde si organizace ověří, zda do regulace spadá.</p></div>
+    </div>
+  </div>
+  <div class="callout fix"><span class="ct">Oprava proti původním podkladům</span><p>Dřívější text uváděl lhůtu hlášení incidentu „24 hodin“ (NIS2) i „72 hodin“ (starý zákon). NIS2 zavádí <b>vícestupňové hlášení</b>: včasné varování zpravidla do 24 hodin, podrobnější zpráva do 72 hodin a závěrečná zpráva do měsíce. Konkrétní lhůty upřesňují prováděcí vyhlášky.</p></div>
+</section>
+
+<section class="topic" id="l-nukib" data-ch="50" data-title="NÚKIB a CERT/CSIRT">
+  <div class="topic-head">
+    <h1>NÚKIB, CERT a CSIRT</h1>
+    <p class="lead">Když udeří incident, nejsou organizace samy. Na národní úrovni koordinuje obranu NÚKIB a specializované týmy CERT/CSIRT.</p>
+  </div>
+  <div class="split">
+    <div class="card"><span class="tag">Úřad</span><h3>NÚKIB</h3><p>Národní úřad pro kybernetickou a informační bezpečnost (od 2017). Dozor nad zákonem, ochrana kritické infrastruktury, bezpečnostní standardy, osvěta, spolupráce s EU a NATO. Provozuje vládní tým <b>GovCERT.CZ</b>.</p></div>
+    <div class="card"><span class="tag">Tým</span><h3>CERT / CSIRT</h3><p>Computer Emergency Response Team / Computer Security Incident Response Team. Monitoruje hrozby, řeší incidenty, dělá forenzní analýzu, radí a školí. V ČR národní tým <b>CSIRT.CZ</b> (provozuje CZ.NIC).</p></div>
+  </div>
+  <div class="callout"><span class="ct">CERT vs. CSIRT</span><p>V podstatě totéž. <b>CERT</b> je starší (a ochranná známka), <b>CSIRT</b> je novější a obecnější označení. V Česku funguje národní CSIRT.CZ a vládní GovCERT.CZ pod NÚKIB.</p></div>
+  <h2>Organizace v EU</h2>
+  <div class="grid">
+    <div class="card"><h4>ENISA</h4><p class="small">Agentura EU pro kybernetickou bezpečnost – koordinace, doporučení, podpora NIS2.</p></div>
+    <div class="card"><h4>CERT-EU</h4><p class="small">Tým chránící instituce a orgány EU.</p></div>
+    <div class="card"><h4>Europol – EC3</h4><p class="small">Evropské centrum pro boj s kyberkriminalitou.</p></div>
+    <div class="card"><h4>EDPS</h4><p class="small">Evropský inspektor ochrany údajů.</p></div>
+  </div>
+</section>
+
+<section class="topic" id="l-trestni" data-ch="50" data-title="Trestní a občanský zákoník">
+  <div class="topic-head">
+    <h1>Kyberkriminalita v českém právu</h1>
+    <p class="lead">Trestní zákoník (40/2009 Sb.) na kybernetické činy pamatuje. Občanský zákoník zase řeší náhradu škody a ochranu osobnosti.</p>
+  </div>
+  <h2>Trestní zákoník – vybrané paragrafy</h2>
+  <div class="tbl"><table>
+    <thead><tr><th>§</th><th>Trestný čin</th><th>Čeho se týká</th></tr></thead>
+    <tbody>
+      <tr><td>§ 230</td><td>Neoprávněný přístup k počítačovému systému a nosiči informací</td><td>Průnik do cizího systému, manipulace s daty</td></tr>
+      <tr><td>§ 231</td><td>Opatření a přechovávání přístupového zařízení a hesla</td><td>Držení či prodej cizích přístupových údajů</td></tr>
+      <tr><td>§ 232</td><td>Poškození záznamu v počítačovém systému</td><td>Úmyslné poškození či změna dat</td></tr>
+      <tr><td>§ 182</td><td>Porušení tajemství dopravovaných zpráv</td><td>Odposlech, čtení cizí komunikace</td></tr>
+      <tr><td>§ 184</td><td>Pomluva</td><td>Nepravdivé informace poškozující pověst (i online)</td></tr>
+      <tr><td>§ 209</td><td>Podvod</td><td>Online podvody, phishing, falešné e-shopy</td></tr>
+      <tr><td>§ 211</td><td>Úvěrový podvod</td><td>Získání úvěru na falešné údaje</td></tr>
+      <tr><td>§ 193b</td><td>Navázání nedovoleného kontaktu s dítětem</td><td>Kybergrooming</td></tr>
+      <tr><td>§ 192</td><td>Výroba a nakládání s dětskou pornografií</td><td>Ochrana dětí</td></tr>
+    </tbody></table></div>
+  <div class="callout fix"><span class="ct">Opravy čísel paragrafů</span><p>Úvěrový podvod je <b>§ 211</b> (podklady uváděly § 210 – to je pojistný podvod). Kybergrooming spadá pod <b>§ 193b</b> – navázání nedovoleného kontaktu s dítětem (ne § 194). Ohrožení utajovaných informací upravuje § 317 n., neoprávněné nakládání s osobními údaji § 180.</p></div>
+  <h2>Občanský zákoník (89/2012 Sb.)</h2>
+  <ul class="list">
+    <li><b>§ 81 a násl.</b> – ochrana osobnosti: jméno, podoba, soukromí.</li>
+    <li><b>§ 2909, 2910</b> – prevence a náhrada škody; každý má jednat tak, aby nezpůsobil škodu i v kyberprostoru.</li>
+    <li><b>§ 561–562</b> – elektronická forma jednání a elektronický podpis.</li>
+    <li><b>§ 2358 a násl.</b> – licenční smlouvy (souvislost s autorskými právy).</li>
+  </ul>
+</section>
+
+<!-- ================= 51 ETIKA ================= -->
+<section class="topic" id="e-kodexy" data-ch="51" data-title="Etické kodexy">
+  <div class="topic-head">
+    <h1>Etika v kybernetickém prostoru</h1>
+    <p class="lead">Co je legální, nemusí být vždy etické – a naopak. Jednotný celosvětový kodex neexistuje, ale řada principů se opakuje: respekt, odpovědnost, ochrana soukromí.</p>
+  </div>
+  <div class="grid">
+    <div class="card"><h4>Profesní etika IT (ACM, IEEE)</h4><p class="small">Ochrana soukromí uživatelů, odpovědnost za bezpečný software, čestné jednání.</p></div>
+    <div class="card"><h4>Etika hackerů</h4><p class="small">Sdílení znalostí pro zlepšení bezpečnosti, nepoškozování, zodpovědné oznamování zranitelností (responsible disclosure).</p></div>
+    <div class="card"><h4>Zásady OSN pro státy</h4><p class="small">Respekt k lidským právům online, zákaz útoků na kritickou infrastrukturu, mírové využití kyberprostoru.</p></div>
+    <div class="card"><h4>Evropský rámec</h4><p class="small">GDPR a připravovaná pravidla pro odpovědné používání AI.</p></div>
+  </div>
+  <div class="callout"><span class="ct">Responsible disclosure</span><p>Etický postup při nálezu chyby: soukromě ji oznámit provozovateli, dát mu čas na opravu a teprve pak případně zveřejnit. Opak – okamžité zveřejnění nebo prodej exploitu – ohrožuje uživatele.</p></div>
+</section>
+
+<section class="topic" id="e-digitalni" data-ch="51" data-title="Digitální etika a dilemata">
+  <div class="topic-head">
+    <h1>Digitální etika</h1>
+    <p class="lead">Digitální etika zkoumá, jak technologie používat odpovědně – s ohledem na lidská práva, bezpečnost a spravedlnost. Mnohdy nejde o „správně/špatně“, ale o vyvažování hodnot.</p>
+  </div>
+  <div class="grid">
+    <div class="card"><h4>Ochrana soukromí</h4><p class="small">Respekt k soukromí a zabezpečení údajů.</p></div>
+    <div class="card"><h4>Transparentnost</h4><p class="small">Srozumitelné fungování algoritmů a AI.</p></div>
+    <div class="card"><h4>Odpovědnost</h4><p class="small">Tvůrci i uživatelé nesou dopady technologií.</p></div>
+    <div class="card"><h4>Spravedlnost a inkluze</h4><p class="small">Zamezení diskriminaci, rovný přístup.</p></div>
+    <div class="card"><h4>Bezpečnost</h4><p class="small">Prevence zneužití a dezinformací.</p></div>
+    <div class="card"><h4>Udržitelnost</h4><p class="small">Dopad techniky na životní prostředí.</p></div>
+  </div>
+  <div class="sim" data-sim="ethics" id="sim-ethics">
+    <div class="sim-head"><span class="badge b">Diskuse</span><h3>Etická dilemata – jak byste rozhodli?</h3></div>
+    <div class="sim-body">
+      <p class="muted">U každého případu zvolte svůj postoj a porovnejte ho s argumenty obou stran. Správná odpověď tu neexistuje – jde o to umět ji obhájit.</p>
+      <div id="ethics-host"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 90 ÚLOHY ================= -->
+<section class="topic" id="u-phish" data-ch="90" data-title="Úloha: Rozbor phishingu">
+  <div class="topic-head">
+    <h1>Úloha: rozbor phishingového e-mailu</h1>
+    <p class="lead">Klasické cvičení z podkladů převedené do interaktivní podoby. Projděte si ukázkový podvodný e-mail a označte v něm všechny varovné signály.</p>
+  </div>
+  <div class="sim" data-sim="phishtask" id="sim-phishtask">
+    <div class="sim-head"><span class="badge g">Simulace</span><h3>Najdi všech 6 varovných znaků</h3></div>
+    <div class="sim-body">
+      <p class="muted">Klikáním označte v e-mailu podezřelé prvky. Pod textem průběžně přibývají nalezené znaky.</p>
+      <div id="phishtask-host"></div>
+    </div>
+  </div>
+  <div class="callout ok"><span class="ct">Jak se zachovat</span><p>Neklikat na odkaz, neodpovídat, nezadávat údaje. Ověřit přímo u instituce (oficiální web/telefon, ne kontakt z e-mailu). Nahlásit IT a zprávu smazat. Když už jste klikli a zadali heslo – ihned ho změňte a zapněte 2FA.</p></div>
+</section>
+
+<section class="topic" id="u-caesar" data-ch="90" data-title="Úloha: Šifrovací hra">
+  <div class="topic-head">
+    <h1>Úloha: rozluštěte zprávu</h1>
+    <p class="lead">Zpráva byla zašifrována Caesarovou šifrou s posunem o 4 znaky. Vaším úkolem je ji rozluštit a popsat postup.</p>
+  </div>
+  <div class="sim" data-sim="decode" id="sim-decode">
+    <div class="sim-head"><span class="badge g">Simulace</span><h3>Dešifrování posunem</h3></div>
+    <div class="sim-body">
+      <p class="muted">Šifrovaný text z původního zadání. Posouvejte klíčem, dokud nevyjde čitelná česká věta.</p>
+      <div class="out mono" id="decode-cipher" style="margin-bottom:1rem"></div>
+      <label class="lbl" for="decode-k">Posun zpět: <span id="decode-kv">0</span></label>
+      <input type="range" id="decode-k" min="0" max="25" value="0">
+      <h4 style="margin-top:1rem">Výsledek</h4>
+      <div class="out mono" id="decode-out"></div>
+      <div class="result" id="decode-res" hidden></div>
+    </div>
+  </div>
+</section>
+
+<section class="topic" id="u-fake" data-ch="90" data-title="Úloha: Falešné zprávy">
+  <div class="topic-head">
+    <h1>Úloha: pravda, nebo hoax?</h1>
+    <p class="lead">Dva články o kávě z původních podkladů. Posuďte u každého důvěryhodnost zdroje, faktické chyby, manipulativní jazyk a účel.</p>
+  </div>
+  <div class="sim" data-sim="fake" id="sim-fake">
+    <div class="sim-head"><span class="badge g">Simulace</span><h3>Ověř zprávu</h3></div>
+    <div class="sim-body">
+      <p class="muted">Přečtěte oba úryvky a u každého rozhodněte, zda jde o důvěryhodnou informaci, nebo hoax. Pak porovnejte s rozborem.</p>
+      <div id="fake-host"></div>
+    </div>
+  </div>
+  <div class="callout"><span class="ct">Jak ověřovat</span><p>Kdo to tvrdí a s jakým zájmem? Je studie publikovaná v recenzovaném časopise? Uvádí zdroje? Tlačí na emoce? Potvrzují to i jiné nezávislé zdroje? Jeden šokující titulek bez zdroje je varovný signál.</p></div>
+</section>
+
+<section class="topic" id="u-temata" data-ch="90" data-title="Náměty a aktuální témata">
+  <div class="topic-head">
+    <h1>Náměty na samostatnou práci</h1>
+    <p class="lead">Z původní kapitoly úloh. Berte je jako inspiraci pro referát, prezentaci nebo projekt. Zpracování se obvykle odevzdává v Markdownu.</p>
+  </div>
+  <h2>Aktuální témata</h2>
+  <div class="grid">
+    <div class="card"><h4>AI v útoku i obraně</h4><p class="small">Automatizovaný phishing a malware vs. detekce anomálií.</p></div>
+    <div class="card"><h4>Zero-day a dodavatelský řetězec</h4><p class="small">Útoky přes třetí strany a neopravené chyby.</p></div>
+    <div class="card"><h4>Deepfake a syntetické identity</h4><p class="small">Manipulace a podvody pomocí falešného obsahu.</p></div>
+    <div class="card"><h4>Bezpečnost cloudu a kontejnerů</h4><p class="small">Konfigurace, přístupy, sdílené prostředky.</p></div>
+    <div class="card"><h4>Edge computing a IoT</h4><p class="small">Decentralizovaná bezpečnost mnoha zařízení.</p></div>
+    <div class="card"><h4>Vnitřní hrozby (insider)</h4><p class="small">Úniky a útoky zevnitř organizace.</p></div>
+  </div>
+  <h2>Náměty pro hlubší zájemce</h2>
+  <ul class="list">
+    <li><b>Kvantové počítače a kryptografie</b> – qubity, superpozice, provázanost; Shorův a Groverův algoritmus; proč ohrožují RSA a ECC; post-kvantová kryptografie a QKD.</li>
+    <li><b>Robotika a humanoidní roboti</b> – Asimovovy zákony robotiky (autor <b>Isaac Asimov</b>), původ slova „robot“ (Karel Čapek, hra R.U.R., 1920; slovo navrhl jeho bratr <b>Josef Čapek</b>), současné projekty (Atlas, Optimus), rizika a etika.</li>
+    <li><b>Hry a chování</b> – vztah násilných her a agrese; vliv na kognitivní schopnosti; zdravé hranice.</li>
+  </ul>
+  <div class="callout fix"><span class="ct">Upřesnění k pravidlu robotiky</span><p>Asimovovy tři zákony později doplnil o <b>nultý zákon</b>: robot nesmí ublížit lidstvu nebo svou nečinností připustit, aby lidstvu bylo ublíženo. Jsou to literární zákony ze sci-fi, ne skutečná technická norma.</p></div>
+  <div class="sim" data-sim="quiz" id="sim-temata">
+    <div class="sim-head"><span class="badge b">Procvičení</span><h3>Rozšiřující pojmy</h3></div>
+    <div class="sim-body"></div>
+    <script type="application/json">[
+      {"q":"Proč kvantové počítače ohrožují šifru RSA?","a":["Jsou rychlejší u všeho","Shorův algoritmus umí efektivně rozložit čísla na prvočísla","Umí uhodnout heslo","Mají víc paměti"],"c":1,"e":"Bezpečnost RSA stojí na obtížnosti faktorizace; Shorův algoritmus ji na kvantovém počítači zvládne efektivně."},
+      {"q":"Kdo poprvé použil slovo „robot“?","a":["Isaac Asimov","Karel Čapek ve hře R.U.R.","Alan Turing","Nikola Tesla"],"c":1,"e":"Slovo zaznělo v Čapkově hře R.U.R. (1920); samotné slovo navrhl jeho bratr Josef."},
+      {"q":"Co je QKD (Quantum Key Distribution)?","a":["Nový antivirus","Kvantová distribuce klíčů – odhalí odposlech už při přenosu klíče","Typ qubitu","Hashovací funkce"],"c":1,"e":"Pokus o odposlech kvantový stav naruší, takže se pozná."}
+    ]</script>
+  </div>
+</section>
+
+<section class="topic" id="u-kviz" data-ch="90" data-title="Závěrečný test">
+  <div class="topic-head">
+    <h1>Závěrečný test</h1>
+    <p class="lead">Dvanáct otázek napříč celým kurzem. Zjistěte, co vám utkvělo – a kam se případně vrátit.</p>
+  </div>
+  <div class="sim" data-sim="quiz" id="sim-final">
+    <div class="sim-head"><span class="badge y">Test</span><h3>Kybernetická bezpečnost – souhrn</h3></div>
+    <div class="sim-body"></div>
+    <script type="application/json">[
+      {"q":"Triáda CIA v bezpečnosti znamená:","a":["Central Intelligence Agency","Confidentiality, Integrity, Availability","Crypto, Internet, AI","Control, Insert, Alter"],"c":1,"e":"Důvěrnost, integrita, dostupnost – tři vlastnosti, které chráníme."},
+      {"q":"Riziko vzniká, když:","a":["Existuje jen hrozba","Hrozba využije zranitelnost aktiva","Máme zálohu","Vypneme firewall"],"c":1,"e":"Riziko = hrozba potká zranitelnost chráněného aktiva."},
+      {"q":"Nejspolehlivější obrana proti ransomwaru:","a":["Rychlejší počítač","Offline záloha dat","Delší heslo","Antivirus zdarma"],"c":1,"e":"Z odpojené zálohy data obnovíte bez placení."},
+      {"q":"Který útok cílí na webové databáze přes vstupní pole?","a":["XSS","SQL injection","DDoS","Phishing"],"c":1,"e":"SQL injection mění databázový dotaz."},
+      {"q":"Rozdíl mezi white hat a black hat hackerem je hlavně v:","a":["Barvě trička","Úmyslu a povolení","Operačním systému","Rychlosti připojení"],"c":1,"e":"Rozhoduje souhlas vlastníka a úmysl."},
+      {"q":"Sociální inženýrství útočí především na:","a":["Hardware","Lidské chování a důvěru","Šifrovací klíče","Kabeláž"],"c":1,"e":"Obchází techniku manipulací člověka."},
+      {"q":"Druhý faktor u 2FA z autentizační aplikace:","a":["Platí navždy","Mění se zhruba po 30 sekundách","Je stejný jako heslo","Chodí poštou"],"c":1,"e":"TOTP kód je časově omezený."},
+      {"q":"TOR zajišťuje anonymitu tím, že:","a":["Zrychlí připojení","Posílá data přes tři náhodné uzly s vrstveným šifrováním","Smaže cookies","Vypne Wi-Fi"],"c":1,"e":"Žádný uzel nezná zdroj i cíl zároveň."},
+      {"q":"K čemu slouží sůl (salt) při hashování hesel?","a":["Zrychlí hash","Znehodnotí rainbow tables","Zašifruje disk","Nahradí 2FA"],"c":1,"e":"Každé heslo dostane jiný hash, univerzální tabulka nepomůže."},
+      {"q":"Který zákon upravuje kybernetickou bezpečnost v ČR od 1. 11. 2025?","a":["181/2014 Sb.","264/2025 Sb.","101/2000 Sb.","89/2012 Sb."],"c":1,"e":"Nový zákon 264/2025 Sb. nahradil starý 181/2014 Sb."},
+      {"q":"Maximální pokuta podle GDPR může být:","a":["1000 Kč","20 mil. € nebo 4 % obratu","Napomenutí","Zákaz internetu"],"c":1,"e":"Vyšší z částek: 20 mil. € nebo 4 % celosvětového obratu."},
+      {"q":"Co je deepfake?","a":["Hluboká záloha","Realistické falešné video/audio od AI","Druh firewallu","Hashovací algoritmus"],"c":1,"e":"Nástroj k podvodům a dezinformacím."}
+    ]</script>
+  </div>
+  <div class="pager-done callout ok" style="margin-top:1.5rem"><span class="ct">Hotovo</span><p>Prošli jste celým kurzem. Pro opakování pojmů zamiřte do <a href="#g-slovnik">slovníku</a>, nebo se vraťte na libovolnou kapitolu v menu.</p></div>
+</section>
+
+<!-- ================= 99 SLOVNÍK ================= -->
+<section class="topic" id="g-slovnik" data-ch="99" data-title="Slovník pojmů">
+  <div class="topic-head">
+    <h1>Slovník pojmů</h1>
+    <p class="lead">Rychlá reference všech důležitých termínů z kurzu. Filtrujte hledáním nebo prvním písmenem.</p>
+  </div>
+  <div class="sim" data-sim="glossary" id="sim-glossary">
+    <div class="sim-body" style="padding-top:1.3rem">
+      <input class="inp" id="gloss-q" type="search" placeholder="Hledat pojem nebo část definice…" autocomplete="off">
+      <div class="letters" id="gloss-letters"></div>
+      <p class="small muted" id="gloss-count"></p>
+      <dl id="gloss-list"></dl>
+    </div>
+    <script type="application/json">[
+      ["Antivirus","Software k detekci, blokování a odstranění škodlivého softwaru."],
+      ["Autentizace","Ověření identity uživatele nebo zařízení před přístupem."],
+      ["Autorizace","Určení, co smí ověřený uživatel dělat (jaká má oprávnění)."],
+      ["Adversariální útok","Speciálně upravený vstup, který zmate AI model (např. obraz klasifikovaný chybně)."],
+      ["APT","Advanced Persistent Threat – dlouhodobý cílený útok, často státem podporovaný."],
+      ["Backdoor","Zadní vrátka – skrytý způsob přístupu do systému."],
+      ["Bezpečnostní audit","Kontrola a hodnocení bezpečnostních opatření organizace."],
+      ["Blockchain","Řetěz bloků provázaných hashem, odolný proti zpětné změně dat."],
+      ["Botnet","Síť napadených zařízení ovládaných útočníkem (DDoS, spam)."],
+      ["Brute force","Útok zkoušením všech možných kombinací hesla či klíče."],
+      ["BYOD","Bring Your Own Device – používání vlastních zařízení v práci; bezpečnostní riziko."],
+      ["CAPTCHA","Test odlišující člověka od automatu."],
+      ["CERT / CSIRT","Týmy pro řešení bezpečnostních incidentů."],
+      ["Cracker","Útočník prolamující ochrany softwaru (licence, DRM)."],
+      ["Cryptojacking","Zneužití cizího výkonu k těžbě kryptoměn."],
+      ["CVE","Common Vulnerabilities and Exposures – jednotné označení známých zranitelností."],
+      ["CVSS","Stupnice závažnosti zranitelnosti 0–10."],
+      ["Darknet","Část webu dostupná jen přes zvláštní software (Tor, I2P)."],
+      ["DDoS","Distributed Denial of Service – zahlcení služby z mnoha zařízení."],
+      ["Deepfake","Realistické falešné video či audio vytvořené AI."],
+      ["Deep web","Neindexovaný obsah za přihlášením (banking, e-maily) – běžný a legální."],
+      ["DNS spoofing","Podvržení DNS odpovědi a přesměrování na falešný web."],
+      ["Enkrypce","Šifrování – převod dat do nečitelné podoby bez klíče."],
+      ["End-to-end šifrování","Data umí přečíst jen odesílatel a příjemce, ani provozovatel ne."],
+      ["Exploit","Kód nebo postup využívající konkrétní zranitelnost."],
+      ["Firewall","Filtr síťového provozu podle pravidel."],
+      ["GDPR","Nařízení EU o ochraně osobních údajů."],
+      ["Hacktivismus","Hacking s politickým nebo společenským cílem."],
+      ["Hacker","Člověk zkoumající a překonávající hranice systémů (eticky i neeticky)."],
+      ["Hashování","Převod dat na jednosměrný otisk pevné délky."],
+      ["IDS","Intrusion Detection System – detekuje a hlásí podezřelou aktivitu."],
+      ["IPS","Intrusion Prevention System – detekuje a rovnou blokuje útok."],
+      ["IoT","Internet of Things – síť připojených chytrých zařízení."],
+      ["Keylogger","Zaznamenává stisky kláves (krádež hesel)."],
+      ["Malware","Obecný název pro škodlivý software."],
+      ["MITM","Man-in-the-Middle – útočník mezi dvěma stranami odposlouchává/mění komunikaci."],
+      ["MFA / 2FA","Vícefaktorové / dvoufázové ověření identity."],
+      ["NIS2","Směrnice EU o kybernetické bezpečnosti (2022)."],
+      ["NÚKIB","Národní úřad pro kybernetickou a informační bezpečnost (ČR)."],
+      ["Penetrační testování","Povolený útok nanečisto k odhalení zranitelností."],
+      ["Pharming","Přesměrování na falešný web změnou DNS."],
+      ["Phishing","Podvodné vylákání údajů pod záminkou důvěryhodné instituce."],
+      ["Ransomware","Zašifruje data a žádá výkupné."],
+      ["Rainbow table","Předpočítaná tabulka hash → heslo; maří ji sůl."],
+      ["RAT","Remote Access Trojan – trojan pro vzdálený přístup k zařízení."],
+      ["Red / Blue team","Útočící / bránící tým v organizaci."],
+      ["Rootkit","Malware skrývající svou přítomnost s vysokými oprávněními."],
+      ["Sandbox","Izolované prostředí pro bezpečné spuštění podezřelého kódu."],
+      ["SIEM","Sběr a vyhodnocení bezpečnostních logů z celé organizace."],
+      ["Sociální inženýrství","Manipulace člověka místo techniky."],
+      ["Spoofing","Podvržení identity (IP, e-mail, telefon)."],
+      ["Spyware","Tajně sleduje uživatele a sbírá data."],
+      ["SQL injection","Vložení kódu do databázového dotazu přes vstup."],
+      ["SSL/TLS","Protokol šifrující komunikaci webu (HTTPS)."],
+      ["Sůl (salt)","Náhodný přívěsek k heslu před hashováním."],
+      ["TOR","Síť pro anonymní přístup přes vrstvené šifrování a tři uzly."],
+      ["Trojský kůň","Malware maskovaný za užitečný program."],
+      ["Virus","Malware šířící se připojením k souborům/programům."],
+      ["Vishing","Phishing po telefonu."],
+      ["VPN","Šifrovaný tunel skrývající IP a chránící provoz."],
+      ["Whaling","Phishing cílený na vedení firmy („velká ryba“)."],
+      ["Worm (červ)","Malware šířící se samostatně po síti."],
+      ["XSS","Cross-Site Scripting – vložení skriptu do webové stránky."],
+      ["Zero-day","Zranitelnost bez dostupné opravy."],
+      ["Zranitelnost","Slabina, kterou může hrozba využít."]
+    ]</script>
+  </div>
+</section>
+</main>
+<script src="assets/app.js" defer></script>
+<script src="assets/sims.js" defer></script>
+</body>
+</html>
