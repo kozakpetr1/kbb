@@ -557,7 +557,7 @@
     <li>Nepřipojujte nalezené USB, nestahujte z neznámých zdrojů.</li>
     <li>Pravidelné školení a kultura, kde se nikdo nebojí zeptat a ověřit.</li>
   </ul>
-  <div class="callout"><span class="ct">Vyzkoušejte si techniky</span><p>Jednotlivé techniky si v této kapitole projdete i prakticky: <a href="#si-phishing">phishing</a>, <a href="#si-spear">cílené útoky</a> (spear phishing, whaling, BEC), <a href="#si-pretext">pretexting, vishing a smishing</a>, <a href="#si-ostatni">návnady a nátlak</a> (baiting, scareware, falešné kvízy) a <a href="#si-fyzicke">fyzické sociální inženýrství</a>.</p></div>
+  <div class="callout"><span class="ct">Vyzkoušejte si techniky</span><p>Jednotlivé techniky si v této kapitole projdete i prakticky: <a href="#si-phishing">phishing</a>, <a href="#si-osint">OSINT a digitální stopa</a>, <a href="#si-spear">cílené útoky</a> (spear phishing, whaling, BEC), <a href="#si-pretext">pretexting, vishing a smishing</a>, <a href="#si-ostatni">návnady a nátlak</a> (baiting, scareware, falešné kvízy) a <a href="#si-fyzicke">fyzické sociální inženýrství</a>.</p></div>
   <div class="sim" data-sim="classify" id="sim-si">
     <div class="sim-head"><span class="badge b">Procvičení</span><h3>Pojmenujte techniku</h3></div>
     <div class="sim-body"><p class="muted">Jaká technika sociálního inženýrství je ve scénáři použita?</p></div>
@@ -593,10 +593,60 @@
   </div>
 </section>
 
+<section class="topic" id="si-osint" data-ch="05" data-title="OSINT – digitální stopa">
+  <div class="topic-head">
+    <h1>OSINT – průzkum z otevřených zdrojů</h1>
+    <p class="lead">OSINT (Open Source Intelligence, česky zpravodajství z otevřených zdrojů) je systematické vyhledávání, shromažďování a vyhodnocování informací z <b>veřejně dostupných</b> zdrojů. Bývá to první krok většiny cílených útoků – i obrany.</p>
+  </div>
+  <div class="grid two">
+    <div class="card"><span class="tag">Co to je</span><h3>Zpravodajství z otevřených zdrojů</h3><p>Práce jen s tím, co je veřejné: vyhledávače, sociální sítě, weby, veřejné registry a odborné databáze. <b>Není to hacking</b> – není potřeba pronikat do účtů, obcházet zabezpečení ani získávat neveřejná data.</p></div>
+    <div class="card"><span class="tag">K čemu v kyberbezpečnosti</span><h3>Mapování digitální stopy</h3><p>Útočník jím mapuje <b>digitální stopu</b> člověka, organizace nebo infrastruktury a připravuje si cílený útok (spear phishing, pretexting). Obránce stejnou metodou zjišťuje, co o něm „jde dohledat“, a riziko snižuje.</p></div>
+  </div>
+
+  <h2>Jak OSINT průzkum probíhá</h2>
+  <div class="grid">
+    <div class="card"><h4>1 · Vyhledávání</h4><p class="small">Vyhledávače, sociální sítě, webové stránky, veřejné registry a odborné databáze.</p></div>
+    <div class="card"><h4>2 · Shromažďování údajů</h4><p class="small">Zaznamenání nalezených informací – profesní profil, publikace, pracovní kontakty.</p></div>
+    <div class="card"><h4>3 · Propojování informací</h4><p class="small">Porovnání zdrojů a ověření, zda se údaje skutečně vztahují ke stejné osobě či organizaci.</p></div>
+    <div class="card"><h4>4 · Vyhodnocení</h4><p class="small">Závěrečná zpráva, rozlišení ověřených a nejistých údajů a identifikace možných rizik.</p></div>
+  </div>
+
+  <div class="sim" data-sim="order" id="sim-osint">
+    <div class="sim-head"><span class="badge b">Procvičení</span><h3>Seřaďte fáze OSINT průzkumu</h3></div>
+    <div class="sim-body"><p class="muted">Šipkami dejte fáze do správného pořadí a zkontrolujte se.</p></div>
+    <script type="application/json">{"items":[
+      "Vyhledávání ve veřejných zdrojích",
+      "Shromažďování nalezených údajů",
+      "Propojování a ověřování informací",
+      "Vyhodnocení a závěrečná zpráva"
+    ],"done":"Přesně tahle posloupnost vede od jednotlivých střípků k souvislému profilu."}</script>
+  </div>
+
+  <div class="callout"><span class="ct">Příklad: osobní digitální stopa</span>
+    <p>Když žáci dostanou jméno vyučujícího, město a název školy, mohou postupovat třeba takto:</p>
+    <ul class="list">
+      <li>vyhledají profesní profil (např. na LinkedInu),</li>
+      <li>na webu školy najdou pracovní zařazení,</li>
+      <li>dohledají články a projekty spojené se jménem,</li>
+      <li>propojí informace z různých zdrojů a ověří jejich shodu,</li>
+      <li>zhodnotí, jak podrobný profil lze sestavit <b>jen z veřejných informací</b>.</li>
+    </ul>
+    <p>To je OSINT průzkum osobní digitální stopy. V navazujícím tématu <a href="#si-spear">Cílené útoky</a> si vyzkoušíte, jak se z takových střípků skládá přesvědčivá phishingová zpráva.</p>
+  </div>
+
+  <div class="callout warn"><span class="ct">Je OSINT legální?</span>
+    <p>Metoda je obecně legitimní, ale rozhoduje, <b>jaké údaje</b> získáváte, <b>jak</b> je získáváte a <b>k čemu</b> je použijete. To, že je informace veřejně dostupná, automaticky neznamená, že její libovolné zpracování nebo zveřejnění je bez omezení (ochrana osobních údajů, GDPR). OSINT také není hacking – nepřekonává zabezpečení ani nezískává neveřejná data.</p>
+  </div>
+
+  <div class="callout ok"><span class="ct">Co si odnést</span>
+    <p>I z jednotlivých, zdánlivě nevýznamných veřejných informací lze jejich <b>propojením</b> získat překvapivě podrobný obraz o člověku nebo organizaci. Proto zvažujte, co o sobě a o firmě veřejně sdílíte.</p>
+  </div>
+</section>
+
 <section class="topic" id="si-spear" data-ch="05" data-title="Simulace: Cílené útoky">
   <div class="topic-head">
     <h1>Cílené útoky: spear phishing, whaling a BEC</h1>
-    <p class="lead">Čím víc o vás útočník ví, tím přesvědčivější zprávu napíše. Spear phishing míří na konkrétního člověka, whaling na vedení firmy a BEC se vydává za šéfa kvůli penězům. Palivem bývá to, co o sobě veřejně sdílíme.</p>
+    <p class="lead">Čím víc o vás útočník ví, tím přesvědčivější zprávu napíše. Spear phishing míří na konkrétního člověka, whaling na vedení firmy a BEC se vydává za šéfa kvůli penězům. Palivem bývá to, co o sobě veřejně sdílíme a co jde zjistit <a href="#si-osint">OSINT</a> průzkumem.</p>
   </div>
   <div class="grid">
     <div class="card"><span class="tag">Na míru</span><h4>Spear phishing</h4><p class="small">Zpráva šitá na míru jednomu člověku podle informací posbíraných z internetu (OSINT).</p></div>
